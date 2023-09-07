@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		866CF7AA2AA9F5540080D6EC /* BikePointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7A92AA9F5540080D6EC /* BikePointApp.swift */; };
+		866CF7AC2AA9F5540080D6EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7AB2AA9F5540080D6EC /* ContentView.swift */; };
+		866CF7AE2AA9F5560080D6EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 866CF7AD2AA9F5560080D6EC /* Assets.xcassets */; };
+		866CF7B12AA9F5560080D6EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 866CF7B02AA9F5560080D6EC /* Preview Assets.xcassets */; };
+		866CF7B32AA9F5560080D6EC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7B22AA9F5560080D6EC /* Persistence.swift */; };
+		866CF7B62AA9F5560080D6EC /* BikePoint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7B42AA9F5560080D6EC /* BikePoint.xcdatamodeld */; };
+		866CF7C02AA9F5560080D6EC /* BikePointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7BF2AA9F5560080D6EC /* BikePointTests.swift */; };
+		866CF7CA2AA9F5560080D6EC /* BikePointUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7C92AA9F5560080D6EC /* BikePointUITests.swift */; };
+		866CF7CC2AA9F5560080D6EC /* BikePointUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7CB2AA9F5560080D6EC /* BikePointUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		866CF7BC2AA9F5560080D6EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 866CF79E2AA9F5540080D6EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 866CF7A52AA9F5540080D6EC;
+			remoteInfo = BikePoint;
+		};
+		866CF7C62AA9F5560080D6EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 866CF79E2AA9F5540080D6EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 866CF7A52AA9F5540080D6EC;
+			remoteInfo = BikePoint;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		866CF7A62AA9F5540080D6EC /* BikePoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikePoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		866CF7A92AA9F5540080D6EC /* BikePointApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePointApp.swift; sourceTree = "<group>"; };
+		866CF7AB2AA9F5540080D6EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		866CF7AD2AA9F5560080D6EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		866CF7B02AA9F5560080D6EC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		866CF7B22AA9F5560080D6EC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		866CF7B52AA9F5560080D6EC /* BikePoint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BikePoint.xcdatamodel; sourceTree = "<group>"; };
+		866CF7BB2AA9F5560080D6EC /* BikePointTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikePointTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		866CF7BF2AA9F5560080D6EC /* BikePointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePointTests.swift; sourceTree = "<group>"; };
+		866CF7C52AA9F5560080D6EC /* BikePointUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikePointUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		866CF7C92AA9F5560080D6EC /* BikePointUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePointUITests.swift; sourceTree = "<group>"; };
+		866CF7CB2AA9F5560080D6EC /* BikePointUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePointUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		866CF7A32AA9F5540080D6EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		866CF7B82AA9F5560080D6EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		866CF7C22AA9F5560080D6EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		866CF79D2AA9F5540080D6EC = {
+			isa = PBXGroup;
+			children = (
+				866CF7A82AA9F5540080D6EC /* BikePoint */,
+				866CF7BE2AA9F5560080D6EC /* BikePointTests */,
+				866CF7C82AA9F5560080D6EC /* BikePointUITests */,
+				866CF7A72AA9F5540080D6EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		866CF7A72AA9F5540080D6EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				866CF7A62AA9F5540080D6EC /* BikePoint.app */,
+				866CF7BB2AA9F5560080D6EC /* BikePointTests.xctest */,
+				866CF7C52AA9F5560080D6EC /* BikePointUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		866CF7A82AA9F5540080D6EC /* BikePoint */ = {
+			isa = PBXGroup;
+			children = (
+				866CF7DA2AA9F5740080D6EC /* Resources */,
+				866CF7D82AA9F5640080D6EC /* Screens */,
+				866CF7DB2AA9F5960080D6EC /* Services */,
+				866CF7D92AA9F56E0080D6EC /* Support */,
+			);
+			path = BikePoint;
+			sourceTree = "<group>";
+		};
+		866CF7AF2AA9F5560080D6EC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				866CF7B02AA9F5560080D6EC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		866CF7BE2AA9F5560080D6EC /* BikePointTests */ = {
+			isa = PBXGroup;
+			children = (
+				866CF7BF2AA9F5560080D6EC /* BikePointTests.swift */,
+			);
+			path = BikePointTests;
+			sourceTree = "<group>";
+		};
+		866CF7C82AA9F5560080D6EC /* BikePointUITests */ = {
+			isa = PBXGroup;
+			children = (
+				866CF7C92AA9F5560080D6EC /* BikePointUITests.swift */,
+				866CF7CB2AA9F5560080D6EC /* BikePointUITestsLaunchTests.swift */,
+			);
+			path = BikePointUITests;
+			sourceTree = "<group>";
+		};
+		866CF7D82AA9F5640080D6EC /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				866CF7AB2AA9F5540080D6EC /* ContentView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		866CF7D92AA9F56E0080D6EC /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				866CF7A92AA9F5540080D6EC /* BikePointApp.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		866CF7DA2AA9F5740080D6EC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				866CF7AD2AA9F5560080D6EC /* Assets.xcassets */,
+				866CF7B42AA9F5560080D6EC /* BikePoint.xcdatamodeld */,
+				866CF7AF2AA9F5560080D6EC /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		866CF7DB2AA9F5960080D6EC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				866CF7B22AA9F5560080D6EC /* Persistence.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		866CF7A52AA9F5540080D6EC /* BikePoint */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 866CF7CF2AA9F5560080D6EC /* Build configuration list for PBXNativeTarget "BikePoint" */;
+			buildPhases = (
+				866CF7A22AA9F5540080D6EC /* Sources */,
+				866CF7A32AA9F5540080D6EC /* Frameworks */,
+				866CF7A42AA9F5540080D6EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BikePoint;
+			productName = BikePoint;
+			productReference = 866CF7A62AA9F5540080D6EC /* BikePoint.app */;
+			productType = "com.apple.product-type.application";
+		};
+		866CF7BA2AA9F5560080D6EC /* BikePointTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 866CF7D22AA9F5560080D6EC /* Build configuration list for PBXNativeTarget "BikePointTests" */;
+			buildPhases = (
+				866CF7B72AA9F5560080D6EC /* Sources */,
+				866CF7B82AA9F5560080D6EC /* Frameworks */,
+				866CF7B92AA9F5560080D6EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				866CF7BD2AA9F5560080D6EC /* PBXTargetDependency */,
+			);
+			name = BikePointTests;
+			productName = BikePointTests;
+			productReference = 866CF7BB2AA9F5560080D6EC /* BikePointTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		866CF7C42AA9F5560080D6EC /* BikePointUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 866CF7D52AA9F5560080D6EC /* Build configuration list for PBXNativeTarget "BikePointUITests" */;
+			buildPhases = (
+				866CF7C12AA9F5560080D6EC /* Sources */,
+				866CF7C22AA9F5560080D6EC /* Frameworks */,
+				866CF7C32AA9F5560080D6EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				866CF7C72AA9F5560080D6EC /* PBXTargetDependency */,
+			);
+			name = BikePointUITests;
+			productName = BikePointUITests;
+			productReference = 866CF7C52AA9F5560080D6EC /* BikePointUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		866CF79E2AA9F5540080D6EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					866CF7A52AA9F5540080D6EC = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					866CF7BA2AA9F5560080D6EC = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 866CF7A52AA9F5540080D6EC;
+					};
+					866CF7C42AA9F5560080D6EC = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 866CF7A52AA9F5540080D6EC;
+					};
+				};
+			};
+			buildConfigurationList = 866CF7A12AA9F5540080D6EC /* Build configuration list for PBXProject "BikePoint" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 866CF79D2AA9F5540080D6EC;
+			productRefGroup = 866CF7A72AA9F5540080D6EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				866CF7A52AA9F5540080D6EC /* BikePoint */,
+				866CF7BA2AA9F5560080D6EC /* BikePointTests */,
+				866CF7C42AA9F5560080D6EC /* BikePointUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		866CF7A42AA9F5540080D6EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				866CF7B12AA9F5560080D6EC /* Preview Assets.xcassets in Resources */,
+				866CF7AE2AA9F5560080D6EC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		866CF7B92AA9F5560080D6EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		866CF7C32AA9F5560080D6EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		866CF7A22AA9F5540080D6EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				866CF7B32AA9F5560080D6EC /* Persistence.swift in Sources */,
+				866CF7AC2AA9F5540080D6EC /* ContentView.swift in Sources */,
+				866CF7AA2AA9F5540080D6EC /* BikePointApp.swift in Sources */,
+				866CF7B62AA9F5560080D6EC /* BikePoint.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		866CF7B72AA9F5560080D6EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				866CF7C02AA9F5560080D6EC /* BikePointTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		866CF7C12AA9F5560080D6EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				866CF7CC2AA9F5560080D6EC /* BikePointUITestsLaunchTests.swift in Sources */,
+				866CF7CA2AA9F5560080D6EC /* BikePointUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		866CF7BD2AA9F5560080D6EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 866CF7A52AA9F5540080D6EC /* BikePoint */;
+			targetProxy = 866CF7BC2AA9F5560080D6EC /* PBXContainerItemProxy */;
+		};
+		866CF7C72AA9F5560080D6EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 866CF7A52AA9F5540080D6EC /* BikePoint */;
+			targetProxy = 866CF7C62AA9F5560080D6EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		866CF7CD2AA9F5560080D6EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		866CF7CE2AA9F5560080D6EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		866CF7D02AA9F5560080D6EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BikePoint/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = WCL42T797B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mikev.BikePoint;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		866CF7D12AA9F5560080D6EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BikePoint/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = WCL42T797B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mikev.BikePoint;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		866CF7D32AA9F5560080D6EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WCL42T797B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mikev.BikePointTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikePoint.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BikePoint";
+			};
+			name = Debug;
+		};
+		866CF7D42AA9F5560080D6EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WCL42T797B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mikev.BikePointTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikePoint.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BikePoint";
+			};
+			name = Release;
+		};
+		866CF7D62AA9F5560080D6EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WCL42T797B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mikev.BikePointUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BikePoint;
+			};
+			name = Debug;
+		};
+		866CF7D72AA9F5560080D6EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WCL42T797B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mikev.BikePointUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BikePoint;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		866CF7A12AA9F5540080D6EC /* Build configuration list for PBXProject "BikePoint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				866CF7CD2AA9F5560080D6EC /* Debug */,
+				866CF7CE2AA9F5560080D6EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		866CF7CF2AA9F5560080D6EC /* Build configuration list for PBXNativeTarget "BikePoint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				866CF7D02AA9F5560080D6EC /* Debug */,
+				866CF7D12AA9F5560080D6EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		866CF7D22AA9F5560080D6EC /* Build configuration list for PBXNativeTarget "BikePointTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				866CF7D32AA9F5560080D6EC /* Debug */,
+				866CF7D42AA9F5560080D6EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		866CF7D52AA9F5560080D6EC /* Build configuration list for PBXNativeTarget "BikePointUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				866CF7D62AA9F5560080D6EC /* Debug */,
+				866CF7D72AA9F5560080D6EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		866CF7B42AA9F5560080D6EC /* BikePoint.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				866CF7B52AA9F5560080D6EC /* BikePoint.xcdatamodel */,
+			);
+			currentVersion = 866CF7B52AA9F5560080D6EC /* BikePoint.xcdatamodel */;
+			path = BikePoint.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 866CF79E2AA9F5540080D6EC /* Project object */;
+}
