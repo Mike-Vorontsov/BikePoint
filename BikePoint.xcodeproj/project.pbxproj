@@ -16,6 +16,17 @@
 		866CF7C02AA9F5560080D6EC /* BikePointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7BF2AA9F5560080D6EC /* BikePointTests.swift */; };
 		866CF7CA2AA9F5560080D6EC /* BikePointUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7C92AA9F5560080D6EC /* BikePointUITests.swift */; };
 		866CF7CC2AA9F5560080D6EC /* BikePointUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7CB2AA9F5560080D6EC /* BikePointUITestsLaunchTests.swift */; };
+		866CF7DD2AA9FA4E0080D6EC /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7DC2AA9FA4E0080D6EC /* URLSession+Extensions.swift */; };
+		866CF7DF2AA9FA620080D6EC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7DE2AA9FA620080D6EC /* NetworkService.swift */; };
+		866CF7E22AAA02950080D6EC /* StationListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7E12AAA02950080D6EC /* StationListsView.swift */; };
+		866CF7E42AAA02B10080D6EC /* StationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7E32AAA02B10080D6EC /* StationCellView.swift */; };
+		866CF7E62AAA03E30080D6EC /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7E52AAA03E30080D6EC /* Metrics.swift */; };
+		866CF7E82AAA05F50080D6EC /* StationsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7E72AAA05F50080D6EC /* StationsListPresenter.swift */; };
+		866CF7EC2AAA06910080D6EC /* BikePointRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7EB2AAA06910080D6EC /* BikePointRequest.swift */; };
+		866CF7EE2AAA09D10080D6EC /* StationsListStateMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7ED2AAA09D10080D6EC /* StationsListStateMapper.swift */; };
+		866CF7F02AAA0AEC0080D6EC /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7EF2AAA0AEC0080D6EC /* RootView.swift */; };
+		866CF7F32AAA10E80080D6EC /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7F22AAA10E80080D6EC /* LocationService.swift */; };
+		866CF7F72AAA24340080D6EC /* DistanceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7F62AAA24340080D6EC /* DistanceFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +59,17 @@
 		866CF7C52AA9F5560080D6EC /* BikePointUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikePointUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		866CF7C92AA9F5560080D6EC /* BikePointUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePointUITests.swift; sourceTree = "<group>"; };
 		866CF7CB2AA9F5560080D6EC /* BikePointUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePointUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		866CF7DC2AA9FA4E0080D6EC /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
+		866CF7DE2AA9FA620080D6EC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		866CF7E12AAA02950080D6EC /* StationListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListsView.swift; sourceTree = "<group>"; };
+		866CF7E32AAA02B10080D6EC /* StationCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCellView.swift; sourceTree = "<group>"; };
+		866CF7E52AAA03E30080D6EC /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		866CF7E72AAA05F50080D6EC /* StationsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsListPresenter.swift; sourceTree = "<group>"; };
+		866CF7EB2AAA06910080D6EC /* BikePointRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePointRequest.swift; sourceTree = "<group>"; };
+		866CF7ED2AAA09D10080D6EC /* StationsListStateMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsListStateMapper.swift; sourceTree = "<group>"; };
+		866CF7EF2AAA0AEC0080D6EC /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		866CF7F22AAA10E80080D6EC /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		866CF7F62AAA24340080D6EC /* DistanceFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +156,10 @@
 		866CF7D82AA9F5640080D6EC /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				866CF7F52AAA24230080D6EC /* Common */,
+				866CF7E02AAA02570080D6EC /* StationsList */,
 				866CF7AB2AA9F5540080D6EC /* ContentView.swift */,
+				866CF7EF2AAA0AEC0080D6EC /* RootView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -153,6 +178,7 @@
 				866CF7AD2AA9F5560080D6EC /* Assets.xcassets */,
 				866CF7B42AA9F5560080D6EC /* BikePoint.xcdatamodeld */,
 				866CF7AF2AA9F5560080D6EC /* Preview Content */,
+				866CF7E52AAA03E30080D6EC /* Metrics.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -160,9 +186,56 @@
 		866CF7DB2AA9F5960080D6EC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				866CF7F12AAA10D60080D6EC /* LocationService */,
+				866CF7EA2AAA066E0080D6EC /* BikePoint */,
+				866CF7E92AAA06600080D6EC /* Common */,
 				866CF7B22AA9F5560080D6EC /* Persistence.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		866CF7E02AAA02570080D6EC /* StationsList */ = {
+			isa = PBXGroup;
+			children = (
+				866CF7E12AAA02950080D6EC /* StationListsView.swift */,
+				866CF7E32AAA02B10080D6EC /* StationCellView.swift */,
+				866CF7E72AAA05F50080D6EC /* StationsListPresenter.swift */,
+				866CF7ED2AAA09D10080D6EC /* StationsListStateMapper.swift */,
+			);
+			path = StationsList;
+			sourceTree = "<group>";
+		};
+		866CF7E92AAA06600080D6EC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				866CF7DC2AA9FA4E0080D6EC /* URLSession+Extensions.swift */,
+				866CF7DE2AA9FA620080D6EC /* NetworkService.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		866CF7EA2AAA066E0080D6EC /* BikePoint */ = {
+			isa = PBXGroup;
+			children = (
+				866CF7EB2AAA06910080D6EC /* BikePointRequest.swift */,
+			);
+			path = BikePoint;
+			sourceTree = "<group>";
+		};
+		866CF7F12AAA10D60080D6EC /* LocationService */ = {
+			isa = PBXGroup;
+			children = (
+				866CF7F22AAA10E80080D6EC /* LocationService.swift */,
+			);
+			path = LocationService;
+			sourceTree = "<group>";
+		};
+		866CF7F52AAA24230080D6EC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				866CF7F62AAA24340080D6EC /* DistanceFormatter.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,8 +368,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				866CF7F32AAA10E80080D6EC /* LocationService.swift in Sources */,
+				866CF7DD2AA9FA4E0080D6EC /* URLSession+Extensions.swift in Sources */,
+				866CF7E82AAA05F50080D6EC /* StationsListPresenter.swift in Sources */,
+				866CF7E22AAA02950080D6EC /* StationListsView.swift in Sources */,
+				866CF7EE2AAA09D10080D6EC /* StationsListStateMapper.swift in Sources */,
 				866CF7B32AA9F5560080D6EC /* Persistence.swift in Sources */,
 				866CF7AC2AA9F5540080D6EC /* ContentView.swift in Sources */,
+				866CF7E62AAA03E30080D6EC /* Metrics.swift in Sources */,
+				866CF7DF2AA9FA620080D6EC /* NetworkService.swift in Sources */,
+				866CF7E42AAA02B10080D6EC /* StationCellView.swift in Sources */,
+				866CF7F02AAA0AEC0080D6EC /* RootView.swift in Sources */,
+				866CF7F72AAA24340080D6EC /* DistanceFormatter.swift in Sources */,
+				866CF7EC2AAA06910080D6EC /* BikePointRequest.swift in Sources */,
 				866CF7AA2AA9F5540080D6EC /* BikePointApp.swift in Sources */,
 				866CF7B62AA9F5560080D6EC /* BikePoint.xcdatamodeld in Sources */,
 			);
@@ -460,6 +544,12 @@
 				DEVELOPMENT_TEAM = WCL42T797B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BikePoint/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = NSLocationWhenInUseUsageDescription;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Always and in usage";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Always descriptio n";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "When in usage description";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -489,6 +579,12 @@
 				DEVELOPMENT_TEAM = WCL42T797B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BikePoint/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = NSLocationWhenInUseUsageDescription;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Always and in usage";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Always descriptio n";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "When in usage description";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
