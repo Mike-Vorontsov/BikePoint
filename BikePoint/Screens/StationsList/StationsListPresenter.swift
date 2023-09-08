@@ -7,60 +7,52 @@
 
 import Foundation
 
-struct BikePoint {
-    let address: String
-    let location: Coordinate
-    let distance: Double?
-    
-    init(address: String, location: Coordinate, distance: Double?) {
-        self.address = address
-        self.location = location
-        self.distance = distance
-    }
-    
-    init(dto: BikePointRequest.BikePoint) {
-        self.address = dto.commonName
-        self.location = Coordinate(latitude: dto.lat, longitude: dto.lon)
-        distance = nil
-    }
-}
-
 final class StationsListPresenter {
     
     init(
-        service: NetworkFecthing,
+        netService: NetworkFecthing,
+        locationService: Locating,
         mapper: StationsListStateMapping
     ) {
-        self.service = service
+        self.fetchingService = netService
+        self.locationService = locationService
         self.mapper = mapper
+
+        start()
+    }
+    
+    private let fetchingService: NetworkFecthing
+    private let locationService: Locating
+    private var mapper: StationsListStateMapping
+
+    private var discardBag: [Any] = []
+
+    private var latestLocation: Coordinate?
+    private var latestPoints: [BikePoint]?
+    
+    lazy var state: StationListsState = .init(stations: [])
+    
+    // MARK: Helpers
+    
+    func start() {
         loadAllPoints()
         monitorLocation()
     }
     
-    private var discardBag: [Any] = []
-    private let service: NetworkFecthing
-    private let locationService: Locating = LocationService()
-    
-    var latestLocation: Coordinate?
-    var latestPoints: [BikePoint]?
-    
-    lazy var state: StationListsState = .init(stations: [])
-    
-    var mapper: StationsListStateMapping
-    
-    func updateStations(stations: [StationCellState]) {
+    private func updateStations(stations: [StationCellState]) {
         state.stations = stations
     }
     
-    func updateDistance(of points: [BikePoint], to location: Coordinate) -> [BikePoint] {
-        points.map {
-            BikePoint(
-                address: $0.address,
-                location: $0.location,
-                distance: locationService.distance(from: $0.location, to: location)
-            )
-        }
-        .sorted { $0.distance ?? .infinity < $1.distance ?? .infinity }
+    private func updateDistance(of points: [BikePoint], to location: Coordinate) -> [BikePoint] {
+        points
+            .map {
+                BikePoint(
+                    address: $0.address,
+                    location: $0.location,
+                    distance: locationService.distance(from: $0.location, to: location)
+                )
+            }
+            .sorted { $0.distance < $1.distance }
         
     }
     
@@ -80,7 +72,7 @@ final class StationsListPresenter {
     private func loadAllPoints() {
         Task {
             do {
-                let dto = try await service.load(from: BikePointRequest.allPoints)
+                let dto = try await fetchingService.load(from: BikePointRequest.allPoints)
                 let points = dto.map{ BikePoint(dto: $0) }
                 latestPoints = points
 

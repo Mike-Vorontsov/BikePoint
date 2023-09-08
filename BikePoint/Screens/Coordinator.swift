@@ -25,8 +25,11 @@ final class Coordinator: Coordinating {
     
     lazy var stationsStateMapper: StationsListStateMapping = StationsListStateMapper()
     
+    lazy var locationService: Locating = LocationService()
+    
     lazy var stationsPresenter: StationsListPresenter = .init(
-        service: netwrokService,
+        netService: netwrokService,
+        locationService: locationService,
         mapper: stationsStateMapper
     )
     

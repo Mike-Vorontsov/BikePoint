@@ -19,6 +19,7 @@ enum BikePointRequest: ApiRequesting {
         
         let lon: Double
         let lat: Double
+        
     }
 
     var path: String {
@@ -35,4 +36,13 @@ enum BikePointRequest: ApiRequesting {
         }
     }
     
+}
+
+extension BikePoint {
+    init(dto: BikePointRequest.BikePoint) {
+        self.init(
+            address: dto.commonName,
+            location: Coordinate(latitude: dto.lat, longitude: dto.lon)
+        )
+    }
 }

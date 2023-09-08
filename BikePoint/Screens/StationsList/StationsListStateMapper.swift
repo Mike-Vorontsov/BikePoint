@@ -15,7 +15,6 @@ protocol StationsListStateMapping {
 final class StationsListStateMapper: StationsListStateMapping {
     
     let distanceFormatter: DistanceFormatting = DistanceFormatter()
-
  
     func map(_ point: BikePoint) -> StationCellState {
         .init(
