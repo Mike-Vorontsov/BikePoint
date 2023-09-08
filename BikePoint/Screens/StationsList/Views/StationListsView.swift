@@ -18,9 +18,20 @@ final class StationListsState: ObservableObject {
 struct StationListsView: View {
     @ObservedObject var state: StationListsState
     var body: some View {
-        List(state.stations) { cellState in
-            StationCellView(state: cellState)
+        //        List(state.stations) { cellState in
+        //            StationCellView(state: cellState)
+        //        }
+        ScrollView(.horizontal) {
+            // 2
+//            LazyHStack(.top, state.stations) { cellState in
+            LazyHStack {
+                ForEach(state.stations){ cellState in
+                    StationCellView(state: cellState)
+                }
+            }
         }
+//        .frame(height: 100)
+        
     }
 }
 

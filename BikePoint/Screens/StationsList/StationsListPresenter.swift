@@ -33,6 +33,7 @@ final class StationsListPresenter {
     private var latestPoints: [BikePoint]?
     
     lazy var state: StationListsState = .init(stations: [])
+    lazy var markersState: StationsMapState = .init(markers: [])
     
     // MARK: Helpers
     
@@ -74,6 +75,14 @@ final class StationsListPresenter {
     private func updateState(with points: [BikePoint], location: Coordinate) {
         state.stations = points.map { bikePoint in
             self.mapper.map(bikePoint) { [weak self] in
+                self?.navigator.showDetails(for: bikePoint)
+            }
+        }
+        markersState.markers = points.map { bikePoint in
+            StationMarketState(
+                coordinates: bikePoint.location,
+                title: bikePoint.address
+            ) { [weak self] in
                 self?.navigator.showDetails(for: bikePoint)
             }
         }

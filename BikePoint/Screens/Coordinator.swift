@@ -54,9 +54,19 @@ final class Coordinator: Coordinating {
         StationDetailsView(state: detailsPresenter.state)
     }
     
+    func prepareSationsMapView() -> StationsMapView<StationListsView> {
+        StationsMapView(
+            state: self.stationsPresenter.markersState,
+            content: {
+                self.prepareStationsListView()
+            }
+        )
+    }
+    
     func prepareStationsNavigationView() -> CustomNavigationView {
         let view = CustomNavigationView(navigationController: navigationController)
-        navigationController.push(view: prepareStationsListView())
+//        navigationController.push(view: prepareStationsListView())
+        navigationController.push(view: prepareSationsMapView())
         return view
     }
     

@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B47FE378-773F-479D-BB52-D170729DE761"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1336B059-8E76-4949-BC30-DD4872B435CE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BikePoint/Services/Common/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "loadData(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1336B059-8E76-4949-BC30-DD4872B435CE - 930cfd3d9d9fc9d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for BikePoint.NetworkService.loadData(for: Foundation.URLRequest) async throws -&gt; Foundation.Data"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Services/Common/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "1336B059-8E76-4949-BC30-DD4872B435CE - 55c40e4216500897"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for BikePoint.NetworkService.loadData(for: Foundation.URLRequest) async throws -&gt; Foundation.Data"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Services/Common/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "1336B059-8E76-4949-BC30-DD4872B435CE - a0657daf3c9d8d96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for BikePoint.NetworkService.loadData(for: Foundation.URLRequest) async throws -&gt; Foundation.Data"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Services/Common/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "1336B059-8E76-4949-BC30-DD4872B435CE - d929bde7ec1ca3b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for BikePoint.NetworkService.loadData(for: Foundation.URLRequest) async throws -&gt; Foundation.Data"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Services/Common/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BDCAEBF2-C345-4881-9EA9-8048BA06E300"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BikePoint/Services/Common/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "loadData(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BDCAEBF2-C345-4881-9EA9-8048BA06E300 - 930cfd3d9d9fc9d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for BikePoint.NetworkService.loadData(for: Foundation.URLRequest) async throws -&gt; Foundation.Data"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Services/Common/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "BDCAEBF2-C345-4881-9EA9-8048BA06E300 - 55c40e4216500897"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for BikePoint.NetworkService.loadData(for: Foundation.URLRequest) async throws -&gt; Foundation.Data"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Services/Common/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "BDCAEBF2-C345-4881-9EA9-8048BA06E300 - a0657daf3c9d8d96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for BikePoint.NetworkService.loadData(for: Foundation.URLRequest) async throws -&gt; Foundation.Data"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Services/Common/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "BDCAEBF2-C345-4881-9EA9-8048BA06E300 - d929bde7ec1ca3b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for BikePoint.NetworkService.loadData(for: Foundation.URLRequest) async throws -&gt; Foundation.Data"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Services/Common/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "82E563D8-EB51-4C35-8D0F-893AED5EEF6D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BikePoint/Services/LocationService/LocationService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "subscribe(eventHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "82E563D8-EB51-4C35-8D0F-893AED5EEF6D - d6913b1709fe4d26"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BikePoint.LocationService.subscribe(eventHandler: (__C.CLLocationCoordinate2D) -&gt; ()) -&gt; BikePoint.Subscribing"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Services/LocationService/LocationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "1008">
+               </Location>
+               <Location
+                  uuid = "82E563D8-EB51-4C35-8D0F-893AED5EEF6D - d6913b1709fe4d26"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BikePoint.LocationService.subscribe(eventHandler: (__C.CLLocationCoordinate2D) -&gt; ()) -&gt; BikePoint.Subscribing"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Services/LocationService/LocationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "1016">
+               </Location>
+               <Location
+                  uuid = "82E563D8-EB51-4C35-8D0F-893AED5EEF6D - d6913b1709fe4d07"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BikePoint.LocationService.subscribe(eventHandler: (__C.CLLocationCoordinate2D) -&gt; ()) -&gt; BikePoint.Subscribing"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Services/LocationService/LocationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "1016">
+               </Location>
+               <Location
+                  uuid = "82E563D8-EB51-4C35-8D0F-893AED5EEF6D - d6913b1709fe4a1f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BikePoint.LocationService.subscribe(eventHandler: (__C.CLLocationCoordinate2D) -&gt; ()) -&gt; BikePoint.Subscribing"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Services/LocationService/LocationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "1016">
+               </Location>
+               <Location
+                  uuid = "82E563D8-EB51-4C35-8D0F-893AED5EEF6D - d6913b1709fe4a1f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BikePoint.LocationService.subscribe(eventHandler: (__C.CLLocationCoordinate2D) -&gt; ()) -&gt; BikePoint.Subscribing"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Services/LocationService/LocationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "1064">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "86DE1896-49EB-4044-A36D-50375F9268C0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BikePoint/Services/LocationService/LocationService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "locationManagerDidChangeAuthorization(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "86DE1896-49EB-4044-A36D-50375F9268C0 - fed66b894a2eb84e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BikePoint.LocationService.locationManagerDidChangeAuthorization(__C.CLLocationManager) -&gt; ()"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Services/LocationService/LocationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "86DE1896-49EB-4044-A36D-50375F9268C0 - fed66b894a2eb946"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BikePoint.LocationService.locationManagerDidChangeAuthorization(__C.CLLocationManager) -&gt; ()"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Services/LocationService/LocationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "86DE1896-49EB-4044-A36D-50375F9268C0 - fed66b894a2eb946"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BikePoint.LocationService.locationManagerDidChangeAuthorization(__C.CLLocationManager) -&gt; ()"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Services/LocationService/LocationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3F9C32D9-4B0D-41D6-A6F7-2E9861287307"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BikePoint/Screens/StationsList/StationsNavigator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "showDetails(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3F9C32D9-4B0D-41D6-A6F7-2E9861287307 - 3af42f1d34a62294"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BikePoint.StationsNavigator.showDetails(for: BikePoint.BikePoint) -&gt; ()"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Screens/StationsList/StationsNavigator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "3F9C32D9-4B0D-41D6-A6F7-2E9861287307 - 3af42f1d34a62269"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BikePoint.StationsNavigator.showDetails(for: BikePoint.BikePoint) -&gt; ()"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Screens/StationsList/StationsNavigator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "220">
+               </Location>
+               <Location
+                  uuid = "3F9C32D9-4B0D-41D6-A6F7-2E9861287307 - 3af42f1d34a62269"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BikePoint.StationsNavigator.showDetails(for: BikePoint.BikePoint) -&gt; ()"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Screens/StationsList/StationsNavigator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "236">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A8F43CAB-C541-48A8-B56C-1C6B37703A71"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BikePoint/Screens/StationDetails/StationDetailsPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "selectedBikePoint"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4D9ACCEF-2A7E-4A11-9D1F-00B282AA72C7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BikePoint/Screens/StationsList/StationsListPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "updateState(with:location:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4D9ACCEF-2A7E-4A11-9D1F-00B282AA72C7 - 9dfcfb92c8f3f748"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BikePoint.StationsListPresenter.updateState(with: Swift.Array&lt;BikePoint.BikePoint&gt;, location: __C.CLLocationCoordinate2D) -&gt; ()"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Screens/StationsList/StationsListPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "4D9ACCEF-2A7E-4A11-9D1F-00B282AA72C7 - 33c8b952c8213b0d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (BikePoint.BikePoint) -&gt; BikePoint.StationCellState in BikePoint.StationsListPresenter.updateState(with: Swift.Array&lt;BikePoint.BikePoint&gt;, location: __C.CLLocationCoordinate2D) -&gt; ()"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Screens/StationsList/StationsListPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CBE5F4B7-1702-483B-8356-7D465291C5C7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BikePoint/Screens/StationsList/StationsListPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "updateState(with:location:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CBE5F4B7-1702-483B-8356-7D465291C5C7 - 9dfcfb92c8f3f7e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BikePoint.StationsListPresenter.updateState(with: Swift.Array&lt;BikePoint.BikePoint&gt;, location: __C.CLLocationCoordinate2D) -&gt; ()"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Screens/StationsList/StationsListPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "248">
+               </Location>
+               <Location
+                  uuid = "CBE5F4B7-1702-483B-8356-7D465291C5C7 - 15936b15d674ed74"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (BikePoint.BikePoint) -&gt; BikePoint.StationMarketState in BikePoint.StationsListPresenter.updateState(with: Swift.Array&lt;BikePoint.BikePoint&gt;, location: __C.CLLocationCoordinate2D) -&gt; ()"
+                  moduleName = "BikePoint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mykhailovorontsov/Documents/Projects/Solo/BikePoint/BikePoint/Screens/StationsList/StationsListPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2D4CFBD7-2E99-4480-821C-7C05AFB1B84C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BikePoint/Screens/StationsList/Views/StationsMapView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
