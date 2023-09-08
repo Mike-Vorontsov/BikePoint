@@ -9,22 +9,16 @@ import SwiftUI
 
 @main
 struct BikePointApp: App {
+    
     let persistenceController = PersistenceController.shared
 
-    let presenter: StationsListPresenter = .init(
-        service: NetworkService(
-            config: .init(
-                baseUrl: URL(string: "https://api.tfl.gov.uk")!,
-                headers: [:]
-            )
-        ),
-        mapper: StationsListStateMapper()
-    )
+   
+    let coordinator: Coordinator = Coordinator()
     
     var body: some Scene {
         WindowGroup {
 //            ContentView()
-            RootView(state: presenter.state)
+            RootView(coordinator: coordinator)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

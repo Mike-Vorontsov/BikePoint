@@ -27,6 +27,7 @@
 		866CF7F02AAA0AEC0080D6EC /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7EF2AAA0AEC0080D6EC /* RootView.swift */; };
 		866CF7F32AAA10E80080D6EC /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7F22AAA10E80080D6EC /* LocationService.swift */; };
 		866CF7F72AAA24340080D6EC /* DistanceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7F62AAA24340080D6EC /* DistanceFormatter.swift */; };
+		866CF7F92AAB22A10080D6EC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7F82AAB22A10080D6EC /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		866CF7EF2AAA0AEC0080D6EC /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		866CF7F22AAA10E80080D6EC /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		866CF7F62AAA24340080D6EC /* DistanceFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceFormatter.swift; sourceTree = "<group>"; };
+		866CF7F82AAB22A10080D6EC /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				866CF7E02AAA02570080D6EC /* StationsList */,
 				866CF7AB2AA9F5540080D6EC /* ContentView.swift */,
 				866CF7EF2AAA0AEC0080D6EC /* RootView.swift */,
+				866CF7F82AAB22A10080D6EC /* Coordinator.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				866CF7F92AAB22A10080D6EC /* Coordinator.swift in Sources */,
 				866CF7F32AAA10E80080D6EC /* LocationService.swift in Sources */,
 				866CF7DD2AA9FA4E0080D6EC /* URLSession+Extensions.swift in Sources */,
 				866CF7E82AAA05F50080D6EC /* StationsListPresenter.swift in Sources */,

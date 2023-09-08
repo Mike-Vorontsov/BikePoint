@@ -29,11 +29,11 @@ struct StationListsView_Previews: PreviewProvider {
         StationListsView(
             state: .init(
                 stations: [
-                    .init(name: "Hello", address: "World!"),
-                    .init(name: "Hanwell", address: "11 Myrtle Gardens"),
-                    .init(name: "Padington", address: "211 Sussex Gardens"
+                    .init(name: "Hello", distance: "World!"),
+                    .init(name: "Hanwell", distance: "11 Myrtle Gardens"),
+                    .init(name: "Padington", distance: "211 Sussex Gardens"
                          ),
-                    .init(name: "Earls court", address: "75 Longridge Road")
+                    .init(name: "Earls court", distance: "75 Longridge Road")
                 ]
             )
         )

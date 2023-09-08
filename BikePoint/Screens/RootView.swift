@@ -8,19 +8,26 @@
 import SwiftUI
 
 struct RootView: View {
-    init(state: StationListsState) {
-        self.state = state
+    init(coordinator: Coordinating) {
+        content = coordinator.prepareStationsListView()
     }
     
-    let state: StationListsState
+    let content: StationListsView
     
     var body: some View {
-        StationListsView(state: state)
+        content
+    }
+}
+
+
+struct FakeCoordinator: Coordinating {
+    func prepareStationsListView() -> StationListsView {
+        return StationListsView(state: StationListsState(stations: []))
     }
 }
 
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        RootView(state: StationListsState(stations: []))
+        RootView(coordinator: FakeCoordinator())
     }
 }

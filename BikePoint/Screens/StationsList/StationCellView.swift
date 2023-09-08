@@ -10,11 +10,11 @@ import Combine
 
 final class StationCellState: ObservableObject, Identifiable {
     @Published var name: String
-    @Published var address: String
+    @Published var distance: String
     
-    init(name: String, address: String) {
+    init(name: String, distance: String) {
         self.name = name
-        self.address = address
+        self.distance = distance
     }
 }
 
@@ -24,7 +24,7 @@ struct StationCellView: View {
     var body: some View {
         VStack {
             Text(state.name)
-            Text(state.address)
+            Text(state.distance)
         }
         .padding(Metrics.cellPadding)
         .background(.gray)
@@ -37,7 +37,7 @@ struct StationCellView_Previews: PreviewProvider {
         StationCellView(
             state: .init(
                 name: "Hello",
-                address: "World!"
+                distance: "World!"
             )
         )
     }

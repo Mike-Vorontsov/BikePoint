@@ -20,7 +20,7 @@ final class StationsListStateMapper: StationsListStateMapping {
     func map(_ point: BikePoint) -> StationCellState {
         .init(
             name: point.address,
-            address: distanceFormatter.string(for: point.distance)
+            distance: distanceFormatter.string(for: point.distance)
         )
     }
 }
