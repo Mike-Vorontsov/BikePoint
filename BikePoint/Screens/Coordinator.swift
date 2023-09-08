@@ -28,7 +28,7 @@ final class Coordinator: Coordinating {
     lazy var locationService: Locating = LocationService()
     
     lazy var stationsPresenter: StationsListPresenter = .init(
-        netService: netwrokService,
+        bikePointService: BikePointApi(networkService: netwrokService),
         locationService: locationService,
         mapper: stationsStateMapper
     )

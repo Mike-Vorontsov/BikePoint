@@ -29,6 +29,7 @@
 		866CF7F72AAA24340080D6EC /* DistanceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7F62AAA24340080D6EC /* DistanceFormatter.swift */; };
 		866CF7F92AAB22A10080D6EC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7F82AAB22A10080D6EC /* Coordinator.swift */; };
 		866CF7FC2AAB32080080D6EC /* BikePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7FB2AAB32080080D6EC /* BikePoint.swift */; };
+		866CF7FE2AAB33CC0080D6EC /* BikePointApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7FD2AAB33CC0080D6EC /* BikePointApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		866CF7F62AAA24340080D6EC /* DistanceFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceFormatter.swift; sourceTree = "<group>"; };
 		866CF7F82AAB22A10080D6EC /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		866CF7FB2AAB32080080D6EC /* BikePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePoint.swift; sourceTree = "<group>"; };
+		866CF7FD2AAB33CC0080D6EC /* BikePointApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePointApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 		866CF7EA2AAA066E0080D6EC /* BikePoint */ = {
 			isa = PBXGroup;
 			children = (
+				866CF7FD2AAB33CC0080D6EC /* BikePointApi.swift */,
 				866CF7EB2AAA06910080D6EC /* BikePointRequest.swift */,
 			);
 			path = BikePoint;
@@ -390,6 +393,7 @@
 				866CF7EE2AAA09D10080D6EC /* StationsListStateMapper.swift in Sources */,
 				866CF7B32AA9F5560080D6EC /* Persistence.swift in Sources */,
 				866CF7FC2AAB32080080D6EC /* BikePoint.swift in Sources */,
+				866CF7FE2AAB33CC0080D6EC /* BikePointApi.swift in Sources */,
 				866CF7AC2AA9F5540080D6EC /* ContentView.swift in Sources */,
 				866CF7E62AAA03E30080D6EC /* Metrics.swift in Sources */,
 				866CF7DF2AA9FA620080D6EC /* NetworkService.swift in Sources */,

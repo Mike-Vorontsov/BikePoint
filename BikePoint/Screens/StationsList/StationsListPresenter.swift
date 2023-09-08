@@ -10,18 +10,18 @@ import Foundation
 final class StationsListPresenter {
     
     init(
-        netService: NetworkFecthing,
+        bikePointService: BikePointFetching,
         locationService: Locating,
         mapper: StationsListStateMapping
     ) {
-        self.fetchingService = netService
+        self.bikePointService = bikePointService
         self.locationService = locationService
         self.mapper = mapper
 
         start()
     }
     
-    private let fetchingService: NetworkFecthing
+    private let bikePointService: BikePointFetching
     private let locationService: Locating
     private var mapper: StationsListStateMapping
 
@@ -72,8 +72,7 @@ final class StationsListPresenter {
     private func loadAllPoints() {
         Task {
             do {
-                let dto = try await fetchingService.load(from: BikePointRequest.allPoints)
-                let points = dto.map{ BikePoint(dto: $0) }
+                let points = try await bikePointService.loadBikePoints()
                 latestPoints = points
 
                 if let latestLocation {
