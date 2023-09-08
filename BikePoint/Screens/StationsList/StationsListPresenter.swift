@@ -12,18 +12,20 @@ final class StationsListPresenter {
     init(
         bikePointService: BikePointFetching,
         locationService: Locating,
-        mapper: StationsListStateMapping
+        mapper: StationsListStateMapping,
+        navigator: StationsNavigating
     ) {
         self.bikePointService = bikePointService
         self.locationService = locationService
         self.mapper = mapper
-
+        self.navigator = navigator
         start()
     }
     
     private let bikePointService: BikePointFetching
     private let locationService: Locating
-    private var mapper: StationsListStateMapping
+    private let mapper: StationsListStateMapping
+    private let navigator: StationsNavigating
 
     private var discardBag: [Any] = []
 
@@ -60,13 +62,21 @@ final class StationsListPresenter {
         locationService
             .subscribe { [weak self] location in
                 self?.latestLocation = location
-                
+
                 if let self, let latestPoints = self.latestPoints {
                     let points = updateDistance(of: latestPoints, to: location)
-                    self.updateStations(stations: points.map(self.mapper.map(_:)))
+                    self.updateState(with: points, location: location)
                 }
             }
             .store(in: &discardBag)
+    }
+    
+    private func updateState(with points: [BikePoint], location: Coordinate) {
+        state.stations = points.map { bikePoint in
+            self.mapper.map(bikePoint) { [weak self] in
+                self?.navigator.showDetails(for: bikePoint)
+            }
+        }
     }
     
     private func loadAllPoints() {
@@ -79,7 +89,7 @@ final class StationsListPresenter {
                     let updatedPoints = updateDistance(of: points, to: latestLocation)
                     
                     await MainActor.run {
-                        updateStations(stations: updatedPoints.map(mapper.map(_:)))
+                        self.updateState(with: updatedPoints, location: latestLocation)
                     }
                 }
             } catch {

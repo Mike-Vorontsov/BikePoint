@@ -11,10 +11,13 @@ import Combine
 final class StationCellState: ObservableObject, Identifiable {
     @Published var name: String
     @Published var distance: String
+    typealias DidSelect = (() -> ())
+    var didSelect: DidSelect
     
-    init(name: String, distance: String) {
+    init(name: String, distance: String, didSelect:  @escaping DidSelect = {} ) {
         self.name = name
         self.distance = distance
+        self.didSelect = didSelect
     }
 }
 
@@ -28,7 +31,9 @@ struct StationCellView: View {
         }
         .padding(Metrics.cellPadding)
         .background(.gray)
-        
+        .onTapGesture {
+            state.didSelect()
+        }
     }
 }
 
@@ -37,7 +42,8 @@ struct StationCellView_Previews: PreviewProvider {
         StationCellView(
             state: .init(
                 name: "Hello",
-                distance: "World!"
+                distance: "World!",
+                didSelect:  { print("Tap") }
             )
         )
     }

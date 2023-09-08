@@ -18,8 +18,8 @@ final class StationListsState: ObservableObject {
 struct StationListsView: View {
     @ObservedObject var state: StationListsState
     var body: some View {
-        List(state.stations) {
-            StationCellView(state: $0)
+        List(state.stations) { cellState in
+            StationCellView(state: cellState)
         }
     }
 }

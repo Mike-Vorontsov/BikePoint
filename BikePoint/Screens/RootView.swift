@@ -15,14 +15,18 @@ struct RootView: View {
     let content: StationListsView
     
     var body: some View {
-        content
+        CustomNavigationView(content: content)
     }
 }
 
 
 struct FakeCoordinator: Coordinating {
     func prepareStationsListView() -> StationListsView {
-        return StationListsView(state: StationListsState(stations: []))
+        StationListsView(state: StationListsState(stations: []))
+    }
+    
+    func prepareStationDetailsView() -> StationDetailsView  {
+        StationDetailsView(state: .init(name: "Hello", distance: "100m", address: "world"))
     }
 }
 
