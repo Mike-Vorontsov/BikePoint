@@ -32,7 +32,7 @@ final class StationsListPresenter {
     private var latestLocation: Coordinate?
     private var latestPoints: [BikePoint]?
     
-    lazy var state: StationListsState = .init(stations: [])
+    lazy var state: StationsListState = .init(stations: [])
     lazy var markersState: StationsMapState = .init(markers: [])
     
     // MARK: Helpers
@@ -96,7 +96,7 @@ final class StationsListPresenter {
             self.state.selectedCell = selectedCell
             
             let selectedMarker = markersState.markers.first{ bikePoint.address == $0.title }
-            self.markersState.selectedMarker = selectedMarker            
+            self.markersState.selectedMarker = selectedMarker
         }
 
     }

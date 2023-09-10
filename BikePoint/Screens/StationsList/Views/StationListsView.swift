@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StationListsView: View {
-    @ObservedObject var state: StationListsState
+    @ObservedObject var state: StationsListState
     var body: some View {
         ScrollViewReader { value in
             ScrollView(.horizontal) {

@@ -18,8 +18,7 @@ struct BikePointApp: App {
     var body: some Scene {
         WindowGroup {
             coordinator.prepareStationsNavigationView()
-//            ContentView()
-//            RootView(coordinator: coordinator)
+                .ignoresSafeArea()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

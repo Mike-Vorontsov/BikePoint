@@ -22,7 +22,7 @@ struct RootView: View {
 
 struct FakeCoordinator: Coordinating {
     func prepareStationsListView() -> StationListsView {
-        StationListsView(state: StationListsState(stations: []))
+        StationListsView(state: StationsListState(stations: []))
     }
     
     func prepareStationDetailsView() -> StationDetailsView  {

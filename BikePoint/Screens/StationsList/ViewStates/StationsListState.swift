@@ -1,5 +1,5 @@
 //
-//  StationListsState.swift
+//  StationsListState.swift
 //  BikePoint
 //
 //  Created by Mykhailo Vorontsov on 10/09/2023.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class StationListsState: ObservableObject {
+final class StationsListState: ObservableObject {
     @Published var stations: [StationCellState]
     @Published var selectedCell: StationCellState? = nil
     

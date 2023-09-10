@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol StationsNavigating {
     func showDetails(for bikePoint: BikePoint)

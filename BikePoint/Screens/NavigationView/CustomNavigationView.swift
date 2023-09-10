@@ -22,6 +22,14 @@ extension UINavigationController: Navigating {
     func pop() {
         popViewController(animated: true)
     }
+    
+    func showBar() {
+        navigationBar.isHidden = false
+    }
+    
+    func hideBar() {
+        navigationBar.isHidden = false
+    }
 }
 
 struct CustomNavigationView: UIViewRepresentable, Navigating {
