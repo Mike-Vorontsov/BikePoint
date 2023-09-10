@@ -32,17 +32,25 @@ final class NetworkService: NetworkFecthing {
         let headers: [String: String]
     }
     
-    let config: ApiConfig
-    let session: URLSessionProtocol
+    private let config: ApiConfig
+    private let session: URLSessionProtocol
 
     internal init(config: ApiConfig, session: URLSessionProtocol = URLSession.shared) {
         self.config = config
         self.session = session
     }
     
-    lazy var decoder: JSONDecoder = .init()
+    private lazy var decoder: JSONDecoder = .init()    
     
-    func urlRequest(from request: any ApiRequesting) -> URLRequest {
+    // MARK: - Public
+    func load<DTO: Decodable>(from request: any ApiRequesting<DTO>) async throws -> DTO {
+        let urlRequest = self.urlRequest(from: request)
+        
+        return try await load(for: urlRequest)
+    }
+    
+    // MARK: - Private helpers
+    private func urlRequest(from request: any ApiRequesting) -> URLRequest {
         let fullUrl = config.baseUrl
             .appending(path: request.path)
             .appending(queryItems: request.query)
@@ -87,10 +95,5 @@ final class NetworkService: NetworkFecthing {
             throw ServiceError.parsing(error: error, data: data)
         }
     }
-    
-    func load<DTO: Decodable>(from request: any ApiRequesting<DTO>) async throws -> DTO {
-        let urlRequest = self.urlRequest(from: request)
-        
-        return try await load(for: urlRequest)
-    }
+
 }

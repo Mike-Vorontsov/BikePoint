@@ -85,7 +85,7 @@ final class NetworkServiceTests: XCTestCase {
         }
         wait(for: [exp])
         // Then
-        XCTAssertEqual(mockSession.mockDataRequest.lastCallParams?.url?.absoluteString, "fake://tests.api/fake_path?fake_param=true")
+        XCTAssertEqual(mockSession.mocks.dataForRequest.lastCallParams?.url?.absoluteString, "fake://tests.api/fake_path?fake_param=true")
     }
     
     func testCorrectHeadersIncludedIntoRequest() throws {
@@ -98,7 +98,7 @@ final class NetworkServiceTests: XCTestCase {
         }
         wait(for: [exp])
         // Then
-        XCTAssertEqual(mockSession.mockDataRequest.lastCallParams?.allHTTPHeaderFields, ["fake_header": "true"])
+        XCTAssertEqual(mockSession.mocks.dataForRequest.lastCallParams?.allHTTPHeaderFields, ["fake_header": "true"])
     }
 
     func testSessionCalledOnce() async throws {
@@ -106,7 +106,7 @@ final class NetworkServiceTests: XCTestCase {
         // When
         _ = try? await sutNetworkService.load(from: FakeApiRequest())
         // Then
-        XCTAssertEqual(mockSession.mockDataRequest.callsCount, 1)
+        XCTAssertEqual(mockSession.mocks.dataForRequest.callsCount, 1)
     }
 
     
@@ -121,7 +121,7 @@ final class NetworkServiceTests: XCTestCase {
 
     func testErrorWhenWrongDataReceived() async throws {
         // Given
-        self.mockSession.mockDataRequest.updateMock { _ in
+        self.mockSession.mocks.dataForRequest.updateMock { _ in
             (
                 FakeResultType.invalidDataString.data(using: .utf8)!,
                 HTTPURLResponse(
@@ -148,7 +148,7 @@ final class NetworkServiceTests: XCTestCase {
     
     func testErrorWheApiCodeNot2xxReceived() async throws {
         // Given
-        self.mockSession.mockDataRequest.updateMock { _ in
+        self.mockSession.mocks.dataForRequest.updateMock { _ in
             (
                 FakeResultType.fakeDataString.data(using: .utf8)!,
                 HTTPURLResponse(
@@ -171,29 +171,4 @@ final class NetworkServiceTests: XCTestCase {
         }
     }
 
-}
-
-final class MockURLSession: URLSessionProtocol {
-    
-    init(mockStringData: String, statusCode: Int = 200) {
-        mockDataRequest = .init(
-            mockResults: (
-                (
-                    mockStringData.data(using: .utf8)!,
-                    HTTPURLResponse(
-                        url: URL(string: "fake://api")!,
-                        statusCode: statusCode,
-                        httpVersion: nil,
-                        headerFields: nil
-                    )! as URLResponse
-                )
-            )
-        )
-    }
-    
-    var mockDataRequest: CallStack<URLRequest, (Data, URLResponse)>
-    
-    func data(for request: URLRequest) async throws -> (Data, URLResponse) {
-        mockDataRequest.record(request)
-    }
 }
