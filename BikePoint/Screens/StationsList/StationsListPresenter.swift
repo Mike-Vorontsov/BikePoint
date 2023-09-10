@@ -93,7 +93,13 @@ final class StationsListPresenter {
             self.navigator.showDetails(for: bikePoint)
         } else {
             self.state.selectedIndex = bikePoint.address
-            self.markersState.selectedIndex = bikePoint.address
+            Task {
+                let selectedMarker = markersState.markers.first{ bikePoint.address == $0.title }
+                await MainActor.run {
+                    self.markersState.selectedMarker = selectedMarker
+                }
+            }
+            
         }
 
     }

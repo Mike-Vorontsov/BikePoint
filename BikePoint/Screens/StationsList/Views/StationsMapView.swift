@@ -27,7 +27,7 @@ struct StationsMapView<Content: View>: View {
                             .fill(.background)
 
                         RoundedRectangle(cornerRadius: Metrics.cornerRadius)
-                            .stroke(state.selectedIndex == markerState.title ? .green : .blue, lineWidth: 5.0)
+                            .stroke(state.selectedMarker?.title == markerState.title ? .green : .blue, lineWidth: 5.0)
                             
                         Image(systemName: "bicycle")
                             .padding(Metrics.cellPadding)
@@ -47,11 +47,10 @@ struct StationsMapView<Content: View>: View {
             MapUserLocationButton()
             MapCompass()
         }
-        .onReceive(state.$selectedIndex) { selectedIndex  in
-            let selecteditem = state.markers.first { $0.title == selectedIndex }
-            guard let selecteditem else { return }
+        .onReceive(state.$selectedMarker) { selectedMarker  in
+            guard let selectedMarker else { return }
             withAnimation{
-                cameraPosition = .camera(MapCamera(centerCoordinate: selecteditem.coordinates, distance: 2000))
+                cameraPosition = .camera(MapCamera(centerCoordinate: selectedMarker.coordinates, distance: 2000))
             }
         }
     }
