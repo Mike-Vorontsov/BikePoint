@@ -10,19 +10,24 @@ import SwiftUI
 struct StationListsView: View {
     @ObservedObject var state: StationListsState
     var body: some View {
-        //        List(state.stations) { cellState in
-        //            StationCellView(state: cellState)
-        //        }
-        ScrollView(.horizontal) {
-            // 2
-//            LazyHStack(.top, state.stations) { cellState in
-            LazyHStack {
-                ForEach(state.stations){ cellState in
-                    StationCellView(state: cellState)
+        ScrollViewReader { value in
+            ScrollView(.horizontal) {
+                LazyHStack {
+                    ForEach(state.stations){ cellState in
+                        StationCellView(
+                            state: cellState
+                        )
+                        .id(cellState.name)
+                        
+                    }
+                }
+            }
+            .onReceive(state.$selectedIndex) { newSelectedIndex in
+                withAnimation {
+                    value.scrollTo(newSelectedIndex, anchor: .bottom)
                 }
             }
         }
-//        .frame(height: 100)
         
     }
 }

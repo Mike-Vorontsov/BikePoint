@@ -9,5 +9,6 @@ import Foundation
 
 enum Metrics {
     
-    static var cellPadding: CGFloat = 10
+    static var cellPadding: CGFloat = 8
+    static var cornerRadius: CGFloat = 16
 }

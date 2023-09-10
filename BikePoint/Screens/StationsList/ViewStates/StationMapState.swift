@@ -22,12 +22,13 @@ final class StationMarkerState: Identifiable {
         self.didSelect = didSelect
         self.coordinates = coordinates
         self.title = title
+        
     }
-    
     
     @Published var coordinates: Coordinate
     @Published var title: String
 
     typealias DidSelect = (() -> ())
     var didSelect: DidSelect?
+    var id: String { title }
 }

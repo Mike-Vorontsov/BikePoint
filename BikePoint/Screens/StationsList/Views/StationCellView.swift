@@ -18,6 +18,7 @@ struct StationCellView: View {
         }
         .padding(Metrics.cellPadding)
         .background(.gray)
+        .clipShape(RoundedRectangle(cornerRadius: Metrics.cornerRadius))
         .onTapGesture {
             state.didSelect()
         }

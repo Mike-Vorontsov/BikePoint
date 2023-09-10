@@ -78,12 +78,17 @@ final class StationsListPresenter {
                 self?.navigator.showDetails(for: bikePoint)
             }
         }
-        markersState.markers = points.map { bikePoint in
+        markersState.markers = points.enumerated().map { (offset, bikePoint) in
             StationMarkerState(
                 coordinates: bikePoint.location,
                 title: bikePoint.address
             ) { [weak self] in
-                self?.navigator.showDetails(for: bikePoint)
+                
+                if self?.state.selectedIndex == bikePoint.address {
+                    self?.navigator.showDetails(for: bikePoint)
+                } else {
+                    self?.state.selectedIndex = bikePoint.address
+                }
             }
         }
     }

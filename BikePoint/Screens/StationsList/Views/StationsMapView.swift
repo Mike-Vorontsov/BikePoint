@@ -18,12 +18,12 @@ struct StationsMapView<Content: View>: View {
             ForEach(state.markers) { markerState in
                 Annotation(markerState.title, coordinate: markerState.coordinates, anchor: .bottom) {
                     ZStack{
-                        RoundedRectangle(cornerRadius: 10)
+                        RoundedRectangle(cornerRadius: Metrics.cornerRadius)
                             .fill(.background)
-                        RoundedRectangle(cornerRadius: 10.0)
+                        RoundedRectangle(cornerRadius: Metrics.cornerRadius)
                             .stroke(lineWidth: 5.0)
                         Image(systemName: "bicycle")
-                            .padding(5)
+                            .padding(Metrics.cellPadding)
                     }
                     .onTapGesture {
                         markerState.didSelect?()
