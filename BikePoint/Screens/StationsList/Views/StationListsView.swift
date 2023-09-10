@@ -38,10 +38,8 @@ struct StationListsView_Previews: PreviewProvider {
         StationListsView(
             state: .init(
                 stations: [
-                    .init(name: "Hello", distance: "World!", comment: "10 bikes\n 12 spaces"),
-                    .init(name: "Hanwell", distance: "11 Myrtle Gardens", comment: "10 bikes 12 spaces"),
-                    .init(name: "Padington", distance: "211 Sussex Gardens", comment: ""),
-                    .init(name: "Earls court", distance: "75 Longridge Road", comment: "")
+                    .init(name: "Times Square", distance: "Very fare away", comment: "10 bikes\n 12 spaces"),
+                    .init(name: "Hanwell", distance: "12 km away", comment: "10 bikes 12 spaces"),
                 ]
             )
         )
