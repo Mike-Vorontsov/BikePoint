@@ -33,6 +33,8 @@
 		866CF7FC2AAB32080080D6EC /* BikePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7FB2AAB32080080D6EC /* BikePoint.swift */; };
 		866CF7FE2AAB33CC0080D6EC /* BikePointApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7FD2AAB33CC0080D6EC /* BikePointApi.swift */; };
 		866CF8022AAB35420080D6EC /* StationsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF8012AAB35420080D6EC /* StationsMapView.swift */; };
+		86DD189B2AAD4A1900748B34 /* StationMapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD189A2AAD4A1900748B34 /* StationMapState.swift */; };
+		86DD189D2AAD4A5700748B34 /* StationListsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD189C2AAD4A5700748B34 /* StationListsState.swift */; };
 		86E216022AAB390200D7432C /* StationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E216012AAB390200D7432C /* StationDetailsView.swift */; };
 		86E216042AAB391400D7432C /* StationDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E216032AAB391400D7432C /* StationDetailsPresenter.swift */; };
 		86E216062AAB399200D7432C /* StationDetailsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E216052AAB399200D7432C /* StationDetailsState.swift */; };
@@ -87,6 +89,8 @@
 		866CF7FB2AAB32080080D6EC /* BikePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePoint.swift; sourceTree = "<group>"; };
 		866CF7FD2AAB33CC0080D6EC /* BikePointApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePointApi.swift; sourceTree = "<group>"; };
 		866CF8012AAB35420080D6EC /* StationsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsMapView.swift; sourceTree = "<group>"; };
+		86DD189A2AAD4A1900748B34 /* StationMapState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationMapState.swift; sourceTree = "<group>"; };
+		86DD189C2AAD4A5700748B34 /* StationListsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListsState.swift; sourceTree = "<group>"; };
 		86E216012AAB390200D7432C /* StationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailsView.swift; sourceTree = "<group>"; };
 		86E216032AAB391400D7432C /* StationDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailsPresenter.swift; sourceTree = "<group>"; };
 		86E216052AAB399200D7432C /* StationDetailsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailsState.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 		866CF7E02AAA02570080D6EC /* StationsList */ = {
 			isa = PBXGroup;
 			children = (
+				86DD18992AAD49F400748B34 /* ViewStates */,
 				86E216072AAB3DC600D7432C /* Views */,
 				866CF7E72AAA05F50080D6EC /* StationsListPresenter.swift */,
 				866CF7ED2AAA09D10080D6EC /* StationsListStateMapper.swift */,
@@ -313,6 +318,15 @@
 				866CF7FB2AAB32080080D6EC /* BikePoint.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		86DD18992AAD49F400748B34 /* ViewStates */ = {
+			isa = PBXGroup;
+			children = (
+				86DD189A2AAD4A1900748B34 /* StationMapState.swift */,
+				86DD189C2AAD4A5700748B34 /* StationListsState.swift */,
+			);
+			path = ViewStates;
 			sourceTree = "<group>";
 		};
 		86E216002AAB38E300D7432C /* StationDetails */ = {
@@ -475,8 +489,10 @@
 			files = (
 				866CF7F92AAB22A10080D6EC /* Coordinator.swift in Sources */,
 				866CF7F32AAA10E80080D6EC /* LocationService.swift in Sources */,
+				86DD189D2AAD4A5700748B34 /* StationListsState.swift in Sources */,
 				86E216112AAB492000D7432C /* StationsNavigator.swift in Sources */,
 				866CF7DD2AA9FA4E0080D6EC /* URLSession+Extensions.swift in Sources */,
+				86DD189B2AAD4A1900748B34 /* StationMapState.swift in Sources */,
 				866CF7E82AAA05F50080D6EC /* StationsListPresenter.swift in Sources */,
 				866CF7E22AAA02950080D6EC /* StationListsView.swift in Sources */,
 				866CF7EE2AAA09D10080D6EC /* StationsListStateMapper.swift in Sources */,

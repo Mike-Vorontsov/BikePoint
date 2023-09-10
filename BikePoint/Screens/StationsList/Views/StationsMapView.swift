@@ -9,31 +9,6 @@ import SwiftUI
 import MapKit
 import Combine
 
-final class StationMarketState: Identifiable {
-    internal init(coordinates: Coordinate, title: String, didSelect:  DidSelect? = nil) {
-        self.didSelect = didSelect
-        self.coordinates = coordinates
-        self.title = title
-    }
-    
-    
-    @Published var coordinates: Coordinate
-    @Published var title: String
-    @Published var region: MKCoordinateRegion = .london
-
-    typealias DidSelect = (() -> ())
-    var didSelect: DidSelect?
-}
-
-final class StationsMapState: ObservableObject {
-    
-    internal init(markers: [StationMarketState]) {
-        self.markers = markers
-    }
-    
-    @Published var markers: [StationMarketState]
-}
-
 struct StationsMapView<Content: View>: View {
     @StateObject var state: StationsMapState
     let content: (() -> Content)?

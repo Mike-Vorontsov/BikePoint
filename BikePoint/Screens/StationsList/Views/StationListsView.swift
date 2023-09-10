@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-final class StationListsState: ObservableObject {
-    @Published var stations: [StationCellState]
-    
-    init(stations: [StationCellState]) {
-        self.stations = stations
-    }
-}
-
 struct StationListsView: View {
     @ObservedObject var state: StationListsState
     var body: some View {

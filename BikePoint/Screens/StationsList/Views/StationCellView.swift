@@ -8,19 +8,6 @@
 import SwiftUI
 import Combine
 
-final class StationCellState: ObservableObject, Identifiable {
-    @Published var name: String
-    @Published var distance: String
-    typealias DidSelect = (() -> ())
-    var didSelect: DidSelect
-    
-    init(name: String, distance: String, didSelect:  @escaping DidSelect = {} ) {
-        self.name = name
-        self.distance = distance
-        self.didSelect = didSelect
-    }
-}
-
 struct StationCellView: View {
     @ObservedObject var state: StationCellState
     

@@ -79,7 +79,7 @@ final class StationsListPresenter {
             }
         }
         markersState.markers = points.map { bikePoint in
-            StationMarketState(
+            StationMarkerState(
                 coordinates: bikePoint.location,
                 title: bikePoint.address
             ) { [weak self] in
