@@ -17,8 +17,9 @@ struct StationListsView: View {
                         StationCellView(
                             state: cellState
                         )
+                        .background(state.selectedIndex == cellState.name ? .green : .blue)
+                        .clipShape(RoundedRectangle(cornerRadius: Metrics.cornerRadius))
                         .id(cellState.name)
-                        
                     }
                 }
             }

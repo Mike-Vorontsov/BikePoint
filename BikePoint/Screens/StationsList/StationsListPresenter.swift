@@ -88,6 +88,7 @@ final class StationsListPresenter {
                     self?.navigator.showDetails(for: bikePoint)
                 } else {
                     self?.state.selectedIndex = bikePoint.address
+                    self?.markersState.selectedIndex = bikePoint.address
                 }
             }
         }

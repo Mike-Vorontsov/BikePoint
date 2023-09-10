@@ -20,8 +20,10 @@ struct StationsMapView<Content: View>: View {
                     ZStack{
                         RoundedRectangle(cornerRadius: Metrics.cornerRadius)
                             .fill(.background)
+
                         RoundedRectangle(cornerRadius: Metrics.cornerRadius)
-                            .stroke(lineWidth: 5.0)
+                            .stroke(state.selectedIndex == markerState.title ? .green : .blue, lineWidth: 5.0)
+                            
                         Image(systemName: "bicycle")
                             .padding(Metrics.cellPadding)
                     }

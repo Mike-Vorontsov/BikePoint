@@ -15,6 +15,7 @@ final class StationsMapState: ObservableObject {
     }
     
     @Published var markers: [StationMarkerState]
+    @Published var selectedIndex: String? = nil
 }
 
 final class StationMarkerState: Identifiable {
