@@ -11,10 +11,15 @@ import Combine
 
 struct StationsMapView<Content: View>: View {
     @StateObject var state: StationsMapState
+    @State var cameraPosition: MapCameraPosition = .userLocation(
+        followsHeading: true,
+        fallback: .automatic
+    )
+    
     let content: (() -> Content)?
     
     var body: some View {
-        Map {
+        Map(position: $cameraPosition) {
             ForEach(state.markers) { markerState in
                 Annotation(markerState.title, coordinate: markerState.coordinates, anchor: .bottom) {
                     ZStack{
