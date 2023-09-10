@@ -53,10 +53,10 @@ final class NetworkService: NetworkFecthing {
         return urlRequest
     }
 
-    func loadData(for request: URLRequest) async throws -> Data {
+    private func loadData(for request: URLRequest) async throws -> Data {
         
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await session.data(for: request)
             
             guard let response = response as? HTTPURLResponse else {
                 throw ServiceError.wrongResponse(response)
@@ -71,12 +71,14 @@ final class NetworkService: NetworkFecthing {
             }
             
             return data
+        } catch let error as ServiceError {
+            throw error
         } catch {
             throw ServiceError.network(error)
         }
     }
     
-    func load<DTO: Decodable>(for request: URLRequest) async throws -> DTO {
+    private func load<DTO: Decodable>(for request: URLRequest) async throws -> DTO {
         let data = try await loadData(for: request)
         
         do {

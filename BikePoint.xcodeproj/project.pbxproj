@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		866CF6862AAD2BA700AECCC9 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF6852AAD2BA700AECCC9 /* NetworkServiceTests.swift */; };
+		866CF68A2AAD2C3100AECCC9 /* CallStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF6892AAD2C3100AECCC9 /* CallStack.swift */; };
 		866CF7AA2AA9F5540080D6EC /* BikePointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7A92AA9F5540080D6EC /* BikePointApp.swift */; };
 		866CF7AC2AA9F5540080D6EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7AB2AA9F5540080D6EC /* ContentView.swift */; };
 		866CF7AE2AA9F5560080D6EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 866CF7AD2AA9F5560080D6EC /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		866CF6852AAD2BA700AECCC9 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		866CF6892AAD2C3100AECCC9 /* CallStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallStack.swift; sourceTree = "<group>"; };
 		866CF7A62AA9F5540080D6EC /* BikePoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikePoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		866CF7A92AA9F5540080D6EC /* BikePointApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePointApp.swift; sourceTree = "<group>"; };
 		866CF7AB2AA9F5540080D6EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -115,6 +119,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		866CF6812AAD2B0100AECCC9 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				866CF6822AAD2B0B00AECCC9 /* Services */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		866CF6822AAD2B0B00AECCC9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				866CF6832AAD2B2100AECCC9 /* Common */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		866CF6832AAD2B2100AECCC9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				866CF6852AAD2BA700AECCC9 /* NetworkServiceTests.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		866CF6872AAD2C1800AECCC9 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				866CF6892AAD2C3100AECCC9 /* CallStack.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		866CF6882AAD2C2300AECCC9 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		866CF79D2AA9F5540080D6EC = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +202,9 @@
 		866CF7BE2AA9F5560080D6EC /* BikePointTests */ = {
 			isa = PBXGroup;
 			children = (
+				866CF6882AAD2C2300AECCC9 /* Mocks */,
+				866CF6872AAD2C1800AECCC9 /* Support */,
+				866CF6812AAD2B0100AECCC9 /* Tests */,
 				866CF7BF2AA9F5560080D6EC /* BikePointTests.swift */,
 			);
 			path = BikePointTests;
@@ -458,6 +504,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				866CF6862AAD2BA700AECCC9 /* NetworkServiceTests.swift in Sources */,
+				866CF68A2AAD2C3100AECCC9 /* CallStack.swift in Sources */,
 				866CF7C02AA9F5560080D6EC /* BikePointTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -682,7 +730,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WCL42T797B;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mikev.BikePointTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -702,7 +750,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WCL42T797B;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mikev.BikePointTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -721,6 +769,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WCL42T797B;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mikev.BikePointUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -739,6 +788,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WCL42T797B;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mikev.BikePointUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

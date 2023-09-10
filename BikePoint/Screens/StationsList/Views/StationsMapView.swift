@@ -41,7 +41,6 @@ struct StationsMapView<Content: View>: View {
     var body: some View {
         Map {
             ForEach(state.markers) { markerState in
-//                Marker($0.title, coordinate: $0.coordinates)
                 Annotation(markerState.title, coordinate: markerState.coordinates, anchor: .bottom) {
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
@@ -72,15 +71,30 @@ struct StationsMapView_Previews: PreviewProvider {
             state: StationsMapState(
                 markers: [
                     .init(
-                        coordinates: CLLocationCoordinate2D.cityHallLocation,
+                        coordinates: londonCenter,
                         title: "London"
-                    )
+                    ),
+                    .init(
+                        coordinates: greenwich,
+                        title: "Greenwich"
+                    ),
+
                 ]
             ),
             content: { EmptyView() }
         )
-        
     }
+    
+    static let londonCenter  = CLLocationCoordinate2D(
+        latitude: 51.509865,
+        longitude: -0.118092
+    )
+    
+    static let greenwich = CLLocationCoordinate2D(
+        latitude: 51.309865,
+        longitude: 0
+    )
+
 }
 
 extension CLLocationCoordinate2D {
