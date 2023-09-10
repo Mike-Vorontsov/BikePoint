@@ -18,14 +18,18 @@ final class StationsListState: ObservableObject {
 }
 
 final class StationCellState: ObservableObject, Identifiable {
+    
     @Published var name: String
     @Published var distance: String
+    @Published var comment: String
+     
     typealias DidSelect = (() -> ())
     var didSelect: DidSelect
     
-    init(name: String, distance: String, didSelect:  @escaping DidSelect = {} ) {
+    init(name: String, distance: String, comment: String, didSelect: @escaping StationCellState.DidSelect = {}) {
         self.name = name
         self.distance = distance
+        self.comment = comment
         self.didSelect = didSelect
     }
 }

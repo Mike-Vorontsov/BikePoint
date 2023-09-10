@@ -17,9 +17,18 @@ final class StationsListStateMapper: StationsListStateMapping {
     let distanceFormatter: DistanceFormatting = DistanceFormatter()
  
     func map(_ point: BikePoint, didSelect: @escaping ()->() ) -> StationCellState {
-        .init(
+        var comment = ["Available -"]
+        if let bikes = point.bikes {
+            comment.append("bikes: \(bikes)")
+        }
+        if let docks = point.slots {
+            comment.append("empty docks: \(docks)")
+        }
+        
+        return .init(
             name: point.address,
-            distance: distanceFormatter.string(for: point.distance),
+            distance: distanceFormatter.string(for: point.distance) + " away",
+            comment: comment.joined(separator: " "),
             didSelect: didSelect
         )
     }

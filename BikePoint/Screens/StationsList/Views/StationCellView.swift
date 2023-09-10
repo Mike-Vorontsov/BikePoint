@@ -12,9 +12,10 @@ struct StationCellView: View {
     @ObservedObject var state: StationCellState
     
     var body: some View {
-        VStack {
-            Text(state.name)
-            Text(state.distance)
+        VStack(alignment: .leading) {
+            Text(state.name).font(.title)
+            Text(state.distance ).font(.subheadline)
+            Text(state.comment).font(.caption)
         }
         .padding(Metrics.cellPadding)
         .onTapGesture {
@@ -28,9 +29,12 @@ struct StationCellView_Previews: PreviewProvider {
         StationCellView(
             state: .init(
                 name: "Hello",
-                distance: "World!",
+                distance: "100km away",
+                comment: "10 bikes / 10 spaces",
                 didSelect:  { print("Tap") }
             )
         )
+            .background(.green)
+            .clipShape(RoundedRectangle(cornerRadius: Metrics.cornerRadius))
     }
 }

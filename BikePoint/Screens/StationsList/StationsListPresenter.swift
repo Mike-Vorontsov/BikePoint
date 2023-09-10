@@ -51,6 +51,8 @@ final class StationsListPresenter {
             .map {
                 BikePoint(
                     address: $0.address,
+                    slots: $0.slots,
+                    bikes: $0.bikes,                    
                     location: $0.location,
                     distance: locationService.distance(from: $0.location, to: location)
                 )
