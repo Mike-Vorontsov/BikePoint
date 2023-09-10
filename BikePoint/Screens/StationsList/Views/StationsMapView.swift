@@ -37,13 +37,16 @@ struct StationsMapView<Content: View>: View {
                     }
                 }
             }
+            UserAnnotation()
         }
         .safeAreaInset(edge: .bottom) {
             content?()
                 .frame(height: 100)
         }
-        
-        
+        .mapControls {
+            MapUserLocationButton()
+            MapCompass()
+        }
     }
 }
 
