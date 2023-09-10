@@ -75,7 +75,7 @@ final class StationsListPresenter {
     private func updateState(with points: [BikePoint], location: Coordinate) {
         state.stations = points.map { bikePoint in
             self.mapper.map(bikePoint) { [weak self] in
-                self?.navigator.showDetails(for: bikePoint)
+                self?.didSelect(bikePoint: bikePoint)
             }
         }
         markersState.markers = points.enumerated().map { (offset, bikePoint) in
@@ -83,15 +83,19 @@ final class StationsListPresenter {
                 coordinates: bikePoint.location,
                 title: bikePoint.address
             ) { [weak self] in
-                
-                if self?.state.selectedIndex == bikePoint.address {
-                    self?.navigator.showDetails(for: bikePoint)
-                } else {
-                    self?.state.selectedIndex = bikePoint.address
-                    self?.markersState.selectedIndex = bikePoint.address
-                }
+                self?.didSelect(bikePoint: bikePoint)
             }
         }
+    }
+    
+    private func didSelect(bikePoint: BikePoint) {
+        if self.state.selectedIndex == bikePoint.address {
+            self.navigator.showDetails(for: bikePoint)
+        } else {
+            self.state.selectedIndex = bikePoint.address
+            self.markersState.selectedIndex = bikePoint.address
+        }
+
     }
     
     private func loadAllPoints() {

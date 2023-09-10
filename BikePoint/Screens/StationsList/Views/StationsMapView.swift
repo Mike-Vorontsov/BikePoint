@@ -47,6 +47,13 @@ struct StationsMapView<Content: View>: View {
             MapUserLocationButton()
             MapCompass()
         }
+        .onReceive(state.$selectedIndex) { selectedIndex  in
+            let selecteditem = state.markers.first { $0.title == selectedIndex }
+            guard let selecteditem else { return }
+            withAnimation{
+                cameraPosition = .camera(MapCamera(centerCoordinate: selecteditem.coordinates, distance: 2000))
+            }
+        }
     }
 }
 
