@@ -89,17 +89,14 @@ final class StationsListPresenter {
     }
     
     private func didSelect(bikePoint: BikePoint) {
-        if self.state.selectedIndex == bikePoint.address {
+        if self.state.selectedCell?.name == bikePoint.address {
             self.navigator.showDetails(for: bikePoint)
         } else {
-            self.state.selectedIndex = bikePoint.address
-            Task {
-                let selectedMarker = markersState.markers.first{ bikePoint.address == $0.title }
-                await MainActor.run {
-                    self.markersState.selectedMarker = selectedMarker
-                }
-            }
+            let selectedCell = state.stations.first{ bikePoint.address == $0.name }
+            self.state.selectedCell = selectedCell
             
+            let selectedMarker = markersState.markers.first{ bikePoint.address == $0.title }
+            self.markersState.selectedMarker = selectedMarker            
         }
 
     }

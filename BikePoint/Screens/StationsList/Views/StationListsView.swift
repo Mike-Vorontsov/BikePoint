@@ -17,15 +17,15 @@ struct StationListsView: View {
                         StationCellView(
                             state: cellState
                         )
-                        .background(state.selectedIndex == cellState.name ? .green : .blue)
+                        .background(state.selectedCell?.name == cellState.name ? .green : .blue)
                         .clipShape(RoundedRectangle(cornerRadius: Metrics.cornerRadius))
                         .id(cellState.name)
                     }
                 }
             }
-            .onReceive(state.$selectedIndex) { newSelectedIndex in
+            .onReceive(state.$selectedCell) { newSelectedIndex in
                 withAnimation {
-                    value.scrollTo(newSelectedIndex, anchor: .bottom)
+                    value.scrollTo(newSelectedIndex?.name, anchor: .bottom)
                 }
             }
         }

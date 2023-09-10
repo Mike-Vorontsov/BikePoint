@@ -10,7 +10,7 @@ import Combine
 
 final class StationListsState: ObservableObject {
     @Published var stations: [StationCellState]
-    @Published var selectedIndex: String? = nil
+    @Published var selectedCell: StationCellState? = nil
     
     init(stations: [StationCellState]) {
         self.stations = stations
