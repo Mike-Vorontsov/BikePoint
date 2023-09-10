@@ -23,7 +23,8 @@ final class BikePointApiTests: XCTestCase {
                     id: "fake",
                     url: "fake://url",
                     lon: 0,
-                    lat: 42
+                    lat: 42,
+                    additionalProperties: []
                 )
             ]
         )

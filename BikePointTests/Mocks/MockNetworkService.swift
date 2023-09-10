@@ -30,7 +30,6 @@ final class MockNetworkService: NetworkFecthing {
         
         guard let matchedResults = mockedResults as? DTO else {
             XCTFail("Expected DTO generic type \(DTO.self)  do not match mocked result type \(type(of: mockedResults))")
-//            XCTSkip("Jumping to next text")
             throw TestsError.mismatchedGenericType
         }
         

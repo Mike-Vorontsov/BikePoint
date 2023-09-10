@@ -8,49 +8,6 @@
 import XCTest
 @testable import BikePoint
 
-struct FakeResultType: Decodable {
-    let fake: Bool
-    
-    static let fakeDataString = 
-"""
-    {
-        \"fake\": true
-    }
-"""
-    
-    static let invalidDataString =
-"""
-    {
-        \"fake1\": true
-    }
-"""
-
-}
-
-extension NetworkService.ServiceError {
-    var debugString: String {
-        switch self {
-        case .wrongResponse:
-            return "wrong response"
-        case .errorCode(let code):
-            return "api code: \(code)"
-        case .network:
-            return "net"
-        case .noData:
-            return "no data"
-        case .parsing:
-            return "parsing"
-        }
-    }
-}
-
-struct FakeApiRequest: ApiRequesting {
-    typealias ResponseType = FakeResultType
-    
-    let path: String = "fake_path"
-    let query: [URLQueryItem] = [URLQueryItem(name: "fake_param", value: "true")]
-}
-
 final class NetworkServiceTests: XCTestCase {
     
     var mockSession: MockURLSession!
@@ -171,4 +128,31 @@ final class NetworkServiceTests: XCTestCase {
         }
     }
 
+}
+
+// MARK: Fake content to test
+private struct FakeResultType: Decodable {
+    let fake: Bool
+    
+    static let fakeDataString =
+"""
+    {
+        \"fake\": true
+    }
+"""
+    
+    static let invalidDataString =
+"""
+    {
+        \"fake1\": true
+    }
+"""
+
+}
+
+private struct FakeApiRequest: ApiRequesting {
+    typealias ResponseType = FakeResultType
+    
+    let path: String = "fake_path"
+    let query: [URLQueryItem] = [URLQueryItem(name: "fake_param", value: "true")]
 }
