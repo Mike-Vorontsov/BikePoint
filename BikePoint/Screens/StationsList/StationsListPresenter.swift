@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 final class StationsListPresenter {
     
@@ -25,12 +26,14 @@ final class StationsListPresenter {
     private let bikePointService: BikePointFetching
     private let locationService: Locating
     private let mapper: StationsListStateMapping
+    private let distanceFormatter: DistanceFormatting = DistanceFormatter()
+    
     private let navigator: StationsNavigating
-
-    private var discardBag: [Any] = []
-
+    
+    private var discardBag: [AnyCancellable] = []
+    
     private var latestLocation: Coordinate?
-    private var latestPoints: [BikePoint]?
+    @Published private var latestPoints: [BikePoint]?
     
     lazy var state: StationsListState = .init(stations: [])
     lazy var markersState: StationsMapState = .init(markers: [])
@@ -38,49 +41,91 @@ final class StationsListPresenter {
     // MARK: Helpers
     
     func start() {
+        setupBindings()
         loadAllPoints()
         monitorLocation()
     }
     
-    private func updateStations(stations: [StationCellState]) {
-        state.stations = stations
-    }
-    
-    private func updateDistance(of points: [BikePoint], to location: Coordinate) -> [BikePoint] {
-        points
-            .map {
-                BikePoint(
-                    address: $0.address,
-                    slots: $0.slots,
-                    bikes: $0.bikes,                    
-                    location: $0.location,
-                    distance: locationService.distance(from: $0.location, to: location)
-                )
+    private func setupBindings() {
+        $latestPoints
+            .compactMap{ $0 }
+            .filter{ !$0.isEmpty }
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self]  in
+                guard let self else { return }
+                self.updateStates(with: $0, location: self.locationService.state.location)
             }
-            .sorted { $0.distance < $1.distance }
-        
-    }
-    
-    private func monitorLocation() {
-        locationService
-            .subscribe { [weak self] location in
-                self?.latestLocation = location
+            .store(in: &discardBag)
 
+        locationService.state
+            .$location
+            .compactMap{ $0 }
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
                 if let self, let latestPoints = self.latestPoints {
-                    let points = updateDistance(of: latestPoints, to: location)
-                    self.updateState(with: points, location: location)
+                    updateDistance(of: latestPoints, to: $0)
                 }
             }
             .store(in: &discardBag)
+
     }
     
-    private func updateState(with points: [BikePoint], location: Coordinate) {
-        state.stations = points.map { bikePoint in
-            self.mapper.map(bikePoint) { [weak self] in
-                self?.didSelect(bikePoint: bikePoint)
+    private func updateDistance(of points: [BikePoint], to location: Coordinate) {
+        // Do not update distance if no points ready yet
+        guard state.stations.count > 0 else { return }
+        
+        //        Task {
+        let updatedCells = points
+            .map {
+                (
+                    point: $0,
+                    distance: locationService.distance(from: $0.location, to: location)
+                )
             }
-        }
-        markersState.markers = points.enumerated().map { (offset, bikePoint) in
+            .sorted {
+                $0.distance < $1.distance
+            }
+            .map{ input in
+                let distance = distanceFormatter.string(for: input.distance)
+                let cellState = state.stations.first {  $0.name == input.point.address }
+                ?? mapper.map(input.point, distance: distance) { [weak self] in
+                    self?.didSelect(bikePoint: input.point)
+                }
+                cellState.distance = distance
+                return cellState
+            }
+        self.state.stations = updatedCells
+    }
+    
+    private func monitorLocation() {
+        locationService.start()
+    }
+    
+    private func updateStates(with points: [BikePoint], location: Coordinate?) {
+        let cells = points
+            .map { (station) -> (distance:Double?, station: BikePoint) in
+                let distance: Double?
+                if let location {
+                    distance = locationService.distance(from: station.location, to: location)
+                } else {
+                    distance = nil
+                }
+                return (distance:distance, station: station)
+            }
+            .sorted{
+                $0.distance ?? .infinity < $1.distance ?? .infinity
+            }
+            .map { (distance, station) in
+                let distanceString = distanceFormatter.string(for: distance)
+                
+                let cell = self.mapper.map(station, distance: distanceString) { [weak self] in
+                    self?.didSelect(bikePoint: station)
+                }
+                return cell
+            }
+        
+        
+        let markers = points.map { bikePoint in
             StationMarkerState(
                 coordinates: bikePoint.location,
                 title: bikePoint.address
@@ -88,6 +133,9 @@ final class StationsListPresenter {
                 self?.didSelect(bikePoint: bikePoint)
             }
         }
+        
+        state.stations = cells
+        markersState.markers = markers
     }
     
     private func didSelect(bikePoint: BikePoint) {
@@ -100,7 +148,7 @@ final class StationsListPresenter {
             let selectedMarker = markersState.markers.first{ bikePoint.address == $0.title }
             self.markersState.selectedMarker = selectedMarker
         }
-
+        
     }
     
     private func loadAllPoints() {
@@ -108,14 +156,7 @@ final class StationsListPresenter {
             do {
                 let points = try await bikePointService.loadBikePoints()
                 latestPoints = points
-
-                if let latestLocation {
-                    let updatedPoints = updateDistance(of: points, to: latestLocation)
-                    
-                    await MainActor.run {
-                        self.updateState(with: updatedPoints, location: latestLocation)
-                    }
-                }
+                
             } catch {
                 print("Error: \(error)")
             }

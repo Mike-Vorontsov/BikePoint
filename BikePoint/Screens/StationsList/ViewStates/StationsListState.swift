@@ -17,7 +17,11 @@ final class StationsListState: ObservableObject {
     }
 }
 
-final class StationCellState: ObservableObject, Identifiable {
+final class StationCellState: ObservableObject, Identifiable, Equatable {
+    static func == (lhs: StationCellState, rhs: StationCellState) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     
     @Published var name: String
     @Published var distance: String

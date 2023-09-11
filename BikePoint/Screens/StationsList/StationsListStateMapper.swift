@@ -9,14 +9,12 @@ import Foundation
 import MapKit
 
 protocol StationsListStateMapping {
-    func map(_ point: BikePoint, didSelect: @escaping ()->() ) -> StationCellState
+    func map(_ point: BikePoint, distance: String, didSelect: @escaping ()->() ) -> StationCellState
 }
 
 final class StationsListStateMapper: StationsListStateMapping {
     
-    let distanceFormatter: DistanceFormatting = DistanceFormatter()
- 
-    func map(_ point: BikePoint, didSelect: @escaping ()->() ) -> StationCellState {
+    func map(_ point: BikePoint, distance: String, didSelect: @escaping ()->() ) -> StationCellState {
         var comment = ["Available -"]
         if let bikes = point.bikes {
             comment.append("bikes: \(bikes)")
@@ -27,7 +25,7 @@ final class StationsListStateMapper: StationsListStateMapping {
         
         return .init(
             name: point.address,
-            distance: distanceFormatter.string(for: point.distance) + " away",
+            distance: distance,
             comment: comment.joined(separator: " "),
             didSelect: didSelect
         )

@@ -22,6 +22,7 @@ struct StationListsView: View {
                         .id(cellState.name)
                     }
                 }
+                .animation(.default, value: state.stations)
             }
             .onReceive(state.$selectedCell) { newSelectedIndex in
                 withAnimation {
