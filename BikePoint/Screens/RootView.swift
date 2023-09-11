@@ -26,7 +26,7 @@ struct FakeCoordinator: Coordinating {
     }
     
     func prepareStationDetailsView() -> StationDetailsView  {
-        StationDetailsView(state: .init(name: "Hello", distance: "100m", address: "world"))
+        StationDetailsView(state: .init(name: "Hello", distance: "100m", address: "world", coordinates: .init(latitude: 0, longitude: 0)))
     }
 }
 

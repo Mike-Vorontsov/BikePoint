@@ -243,6 +243,7 @@
 				86E216002AAB38E300D7432C /* StationDetails */,
 				866CF7E02AAA02570080D6EC /* StationsList */,
 				866CF7EF2AAA0AEC0080D6EC /* RootView.swift */,
+				86E216102AAB492000D7432C /* StationsNavigator.swift */,
 				866CF7F82AAB22A10080D6EC /* Coordinator.swift */,
 			);
 			path = Screens;
@@ -284,7 +285,6 @@
 				86E216072AAB3DC600D7432C /* Views */,
 				866CF7E72AAA05F50080D6EC /* StationsListPresenter.swift */,
 				866CF7ED2AAA09D10080D6EC /* StationsListStateMapper.swift */,
-				86E216102AAB492000D7432C /* StationsNavigator.swift */,
 			);
 			path = StationsList;
 			sourceTree = "<group>";
