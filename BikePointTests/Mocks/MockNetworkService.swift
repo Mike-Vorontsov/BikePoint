@@ -26,7 +26,7 @@ final class MockNetworkService: NetworkFecthing {
     var mocks: Mocks
     
     func load<DTO: Decodable>(from request: any ApiRequesting<DTO>) async throws -> DTO {
-        let mockedResults = mocks.loadRequest.record((request, DTO.self))
+        let mockedResults = try mocks.loadRequest.record((request, DTO.self))
         
         guard let matchedResults = mockedResults as? DTO else {
             XCTFail("Expected DTO generic type \(DTO.self)  do not match mocked result type \(type(of: mockedResults))")

@@ -35,6 +35,6 @@ final class MockURLSession: URLSessionProtocol {
     var mocks: Mocks
     
     func data(for request: URLRequest) async throws -> (Data, URLResponse) {
-        mocks.dataForRequest.record(request)
+        try mocks.dataForRequest.record(request)
     }
 }

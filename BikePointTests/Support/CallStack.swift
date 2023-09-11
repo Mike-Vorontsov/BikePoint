@@ -12,7 +12,7 @@ struct CallStack<Params, Results> {
         self.mock = mock
     }
     
-    typealias MockCall = (Params) -> (Results)
+    typealias MockCall = (Params) throws -> (Results)
     var history: Array<Params> = []
     
     var lastCallParams: Params? { history.last }
@@ -26,9 +26,9 @@ struct CallStack<Params, Results> {
     }
     
     mutating 
-    func record(_ params: Params) -> Results {
+    func record(_ params: Params) throws -> Results {
         history.append(params)
-        return  mock(params)
+        return try mock(params)
     }
     
     

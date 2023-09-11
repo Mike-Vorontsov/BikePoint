@@ -18,17 +18,18 @@ protocol Coordinating: StationsCoordinating {}
 
 final class Coordinator: Coordinating {
     
+    // MARK: - Mappers and Formatters
+    lazy var stationsStateMapper: StationsListStateMapping = StationsListStateMapper()
+    lazy var distanceFormatter = DistanceFormatter()
+
+    // MARK: - Services
     lazy var netwrokService: NetworkService = .init(config:
             .init(
                 baseUrl: URL(string: "https://api.tfl.gov.uk")!,
                 headers: [:]
             )
     )
-    
-    lazy var stationsStateMapper: StationsListStateMapping = StationsListStateMapper()
-    
     lazy var persistanceStore: BikePointPersisting = BikePointStore()
-    
     lazy var locationService: Locating = LocationService()
     
     lazy var bikePointApi: BikePointFetching = BikePointApi(
@@ -36,6 +37,16 @@ final class Coordinator: Coordinating {
         store: persistanceStore
     )
     
+    // MARK: - Navigation
+    lazy var navigationController: UINavigationController = UINavigationController()
+
+    lazy var stationsNavigator: StationsNavigating = StationsNavigator(
+        navigation: navigationController,
+        detailsPresenterResolver: {[unowned self] in self.detailsPresenter },
+        detailsViewResolver: {[unowned self] in self.prepareStationDetailsView() }
+    )
+    
+    // MARK: - Presenters
     lazy var stationsPresenter: StationsListPresenter = .init(
         bikePointService: bikePointApi,
         locationService: locationService,
@@ -51,16 +62,7 @@ final class Coordinator: Coordinating {
         distanceFormatter: distanceFormatter
     )
     
-    lazy var navigationController: UINavigationController = UINavigationController()
-    
-    lazy var stationsNavigator: StationsNavigating = StationsNavigator(
-        navigator: navigationController,
-        detailsPresenterResolver: { self.detailsPresenter },
-        detailsViewResolver: { self.prepareStationDetailsView() }
-    )
-    
-    lazy var distanceFormatter = DistanceFormatter()
-    
+    // MARK: - Views
     
     func prepareStationsListView() -> StationListsView {
         StationListsView(state: stationsPresenter.state)
@@ -71,19 +73,13 @@ final class Coordinator: Coordinating {
     }
     
     func prepareStationsMapView() -> StationsMapView<StationListsView> {
-        StationsMapView(
-            state: self.stationsPresenter.markersState,
-            content: {
-                self.prepareStationsListView()
-            }
-        )
+        StationsMapView(state: self.stationsPresenter.markersState) { self.prepareStationsListView() }
     }
     
     func prepareStationsNavigationView() -> CustomNavigationView {
-        let view = CustomNavigationView(navigationController: navigationController)
         navigationController.push(view: prepareStationsMapView())
         navigationController.navigationBar.isHidden = true
-        return view
+        return CustomNavigationView(navigationController: navigationController)
     }
     
     func prepareRootView() -> RootView {

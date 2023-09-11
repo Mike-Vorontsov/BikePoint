@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		863F345E2AAE426600699EA0 /* NetworkService.ServiceError+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863F345D2AAE426600699EA0 /* NetworkService.ServiceError+Extension.swift */; };
 		863F34622AAE453B00699EA0 /* BikePointStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863F34612AAE453B00699EA0 /* BikePointStore.swift */; };
+		86685C0C2AAF7B1400EA5941 /* MockBikePointStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86685C0B2AAF7B1400EA5941 /* MockBikePointStore.swift */; };
 		866CF6862AAD2BA700AECCC9 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF6852AAD2BA700AECCC9 /* NetworkServiceTests.swift */; };
 		866CF68A2AAD2C3100AECCC9 /* CallStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF6892AAD2C3100AECCC9 /* CallStack.swift */; };
 		866CF7AA2AA9F5540080D6EC /* BikePointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7A92AA9F5540080D6EC /* BikePointApp.swift */; };
@@ -63,6 +64,7 @@
 /* Begin PBXFileReference section */
 		863F345D2AAE426600699EA0 /* NetworkService.ServiceError+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService.ServiceError+Extension.swift"; sourceTree = "<group>"; };
 		863F34612AAE453B00699EA0 /* BikePointStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePointStore.swift; sourceTree = "<group>"; };
+		86685C0B2AAF7B1400EA5941 /* MockBikePointStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBikePointStore.swift; sourceTree = "<group>"; };
 		866CF6852AAD2BA700AECCC9 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		866CF6892AAD2C3100AECCC9 /* CallStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallStack.swift; sourceTree = "<group>"; };
 		866CF7A62AA9F5540080D6EC /* BikePoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikePoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +174,7 @@
 			children = (
 				86DD18A12AAE0C6900748B34 /* MockURLSession.swift */,
 				86DD18A32AAE0C9C00748B34 /* MockNetworkService.swift */,
+				86685C0B2AAF7B1400EA5941 /* MockBikePointStore.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86685C0C2AAF7B1400EA5941 /* MockBikePointStore.swift in Sources */,
 				86DD18A22AAE0C6900748B34 /* MockURLSession.swift in Sources */,
 				863F345E2AAE426600699EA0 /* NetworkService.ServiceError+Extension.swift in Sources */,
 				86DD18A02AAE0B3E00748B34 /* BikePointApiTests.swift in Sources */,
