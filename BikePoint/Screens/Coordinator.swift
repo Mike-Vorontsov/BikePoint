@@ -27,16 +27,25 @@ final class Coordinator: Coordinating {
     
     lazy var stationsStateMapper: StationsListStateMapping = StationsListStateMapper()
     
+    lazy var persistanceStore: BikePointPersisting = BikePointStore()
+    
     lazy var locationService: Locating = LocationService()
     
+    lazy var bikePointApi: BikePointFetching = BikePointApi(
+        networkService: netwrokService,
+        store: persistanceStore
+    )
+    
     lazy var stationsPresenter: StationsListPresenter = .init(
-        bikePointService: BikePointApi(networkService: netwrokService),
+        bikePointService: bikePointApi,
         locationService: locationService,
         mapper: stationsStateMapper,
         navigator: stationsNavigator
     )
     
-    lazy var detailsPresenter: StationDetailsPresenter = .init(detailsFetching: BikePointApi(networkService: netwrokService))
+    lazy var detailsPresenter: StationDetailsPresenter = .init(
+        detailsFetching: bikePointApi
+    )
     
     lazy var navigationController: UINavigationController = UINavigationController()
     

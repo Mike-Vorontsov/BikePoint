@@ -12,17 +12,33 @@ protocol BikePointFetching {
 }
 
 final class BikePointApi: BikePointFetching {
-    internal init(networkService: NetworkFecthing) {
+    private let networkService: NetworkFecthing
+    private let store: BikePointPersisting
+    
+    init(networkService: NetworkFecthing, store: BikePointPersisting) {
         self.networkService = networkService
+        self.store = store
     }
     
-    let networkService: NetworkFecthing
-    
     func loadBikePoints() async throws -> [BikePoint] {
-        try await networkService
-            .load(from: BikePointRequest.allPoints)
-            .map {
-                BikePoint(dto: $0)
+        do {
+            let response = try await networkService
+                .load(from: BikePointRequest.allPoints)
+                .map {
+                    BikePoint(dto: $0)
+                }
+            Task {
+                await store.save(response)
             }
+            return response
+
+        } catch let netError {
+            do {
+                let response = try await store.allStations()
+                return response
+            } catch _ {
+                throw netError
+            }
+        }        
     }
 }

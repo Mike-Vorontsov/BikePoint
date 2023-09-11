@@ -17,7 +17,7 @@ final class StationsListStateMapper: StationsListStateMapping {
     func map(_ point: BikePoint, distance: String, didSelect: @escaping ()->() ) -> StationCellState {
         var comment = ["Available -"]
         if let bikes = point.bikes {
-            comment.append("bikes: \(bikes)")
+            comment.append("bikes: \(bikes);")
         }
         if let docks = point.slots {
             comment.append("empty docks: \(docks)")

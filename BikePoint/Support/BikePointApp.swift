@@ -10,16 +10,12 @@ import SwiftUI
 @main
 struct BikePointApp: App {
     
-    let persistenceController = PersistenceController.shared
-
-   
     let coordinator: Coordinator = Coordinator()
     
     var body: some Scene {
         WindowGroup {
             coordinator.prepareStationsNavigationView()
                 .ignoresSafeArea()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

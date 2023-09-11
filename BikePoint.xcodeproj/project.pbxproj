@@ -8,14 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		863F345E2AAE426600699EA0 /* NetworkService.ServiceError+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863F345D2AAE426600699EA0 /* NetworkService.ServiceError+Extension.swift */; };
+		863F34622AAE453B00699EA0 /* BikePointStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863F34612AAE453B00699EA0 /* BikePointStore.swift */; };
 		866CF6862AAD2BA700AECCC9 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF6852AAD2BA700AECCC9 /* NetworkServiceTests.swift */; };
 		866CF68A2AAD2C3100AECCC9 /* CallStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF6892AAD2C3100AECCC9 /* CallStack.swift */; };
 		866CF7AA2AA9F5540080D6EC /* BikePointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7A92AA9F5540080D6EC /* BikePointApp.swift */; };
-		866CF7AC2AA9F5540080D6EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7AB2AA9F5540080D6EC /* ContentView.swift */; };
 		866CF7AE2AA9F5560080D6EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 866CF7AD2AA9F5560080D6EC /* Assets.xcassets */; };
 		866CF7B12AA9F5560080D6EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 866CF7B02AA9F5560080D6EC /* Preview Assets.xcassets */; };
-		866CF7B32AA9F5560080D6EC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7B22AA9F5560080D6EC /* Persistence.swift */; };
-		866CF7B62AA9F5560080D6EC /* BikePoint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7B42AA9F5560080D6EC /* BikePoint.xcdatamodeld */; };
 		866CF7CA2AA9F5560080D6EC /* BikePointUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7C92AA9F5560080D6EC /* BikePointUITests.swift */; };
 		866CF7CC2AA9F5560080D6EC /* BikePointUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7CB2AA9F5560080D6EC /* BikePointUITestsLaunchTests.swift */; };
 		866CF7DD2AA9FA4E0080D6EC /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CF7DC2AA9FA4E0080D6EC /* URLSession+Extensions.swift */; };
@@ -64,15 +62,13 @@
 
 /* Begin PBXFileReference section */
 		863F345D2AAE426600699EA0 /* NetworkService.ServiceError+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService.ServiceError+Extension.swift"; sourceTree = "<group>"; };
+		863F34612AAE453B00699EA0 /* BikePointStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePointStore.swift; sourceTree = "<group>"; };
 		866CF6852AAD2BA700AECCC9 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		866CF6892AAD2C3100AECCC9 /* CallStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallStack.swift; sourceTree = "<group>"; };
 		866CF7A62AA9F5540080D6EC /* BikePoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikePoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		866CF7A92AA9F5540080D6EC /* BikePointApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePointApp.swift; sourceTree = "<group>"; };
-		866CF7AB2AA9F5540080D6EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		866CF7AD2AA9F5560080D6EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		866CF7B02AA9F5560080D6EC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		866CF7B22AA9F5560080D6EC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		866CF7B52AA9F5560080D6EC /* BikePoint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BikePoint.xcdatamodel; sourceTree = "<group>"; };
 		866CF7BB2AA9F5560080D6EC /* BikePointTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikePointTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		866CF7C52AA9F5560080D6EC /* BikePointUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikePointUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		866CF7C92AA9F5560080D6EC /* BikePointUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePointUITests.swift; sourceTree = "<group>"; };
@@ -129,6 +125,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		863F345F2AAE452300699EA0 /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				863F34612AAE453B00699EA0 /* BikePointStore.swift */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
 		866CF6812AAD2B0100AECCC9 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,7 +242,6 @@
 				86E2160D2AAB404800D7432C /* NavigationView */,
 				86E216002AAB38E300D7432C /* StationDetails */,
 				866CF7E02AAA02570080D6EC /* StationsList */,
-				866CF7AB2AA9F5540080D6EC /* ContentView.swift */,
 				866CF7EF2AAA0AEC0080D6EC /* RootView.swift */,
 				866CF7F82AAB22A10080D6EC /* Coordinator.swift */,
 			);
@@ -257,7 +260,6 @@
 			isa = PBXGroup;
 			children = (
 				866CF7AD2AA9F5560080D6EC /* Assets.xcassets */,
-				866CF7B42AA9F5560080D6EC /* BikePoint.xcdatamodeld */,
 				866CF7AF2AA9F5560080D6EC /* Preview Content */,
 				866CF7E52AAA03E30080D6EC /* Metrics.swift */,
 			);
@@ -267,10 +269,10 @@
 		866CF7DB2AA9F5960080D6EC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				863F345F2AAE452300699EA0 /* Persistance */,
 				866CF7F12AAA10D60080D6EC /* LocationService */,
 				866CF7EA2AAA066E0080D6EC /* BikePoint */,
 				866CF7E92AAA06600080D6EC /* Common */,
-				866CF7B22AA9F5560080D6EC /* Persistence.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -513,10 +515,8 @@
 				866CF7E82AAA05F50080D6EC /* StationsListPresenter.swift in Sources */,
 				866CF7E22AAA02950080D6EC /* StationListsView.swift in Sources */,
 				866CF7EE2AAA09D10080D6EC /* StationsListStateMapper.swift in Sources */,
-				866CF7B32AA9F5560080D6EC /* Persistence.swift in Sources */,
 				866CF7FC2AAB32080080D6EC /* BikePoint.swift in Sources */,
 				866CF7FE2AAB33CC0080D6EC /* BikePointApi.swift in Sources */,
-				866CF7AC2AA9F5540080D6EC /* ContentView.swift in Sources */,
 				866CF7E62AAA03E30080D6EC /* Metrics.swift in Sources */,
 				866CF7DF2AA9FA620080D6EC /* NetworkService.swift in Sources */,
 				86E2160F2AAB406500D7432C /* CustomNavigationView.swift in Sources */,
@@ -525,11 +525,11 @@
 				866CF7F02AAA0AEC0080D6EC /* RootView.swift in Sources */,
 				86E216022AAB390200D7432C /* StationDetailsView.swift in Sources */,
 				866CF8022AAB35420080D6EC /* StationsMapView.swift in Sources */,
+				863F34622AAE453B00699EA0 /* BikePointStore.swift in Sources */,
 				866CF7F72AAA24340080D6EC /* DistanceFormatter.swift in Sources */,
 				866CF7EC2AAA06910080D6EC /* BikePointRequest.swift in Sources */,
 				86E216062AAB399200D7432C /* StationDetailsState.swift in Sources */,
 				866CF7AA2AA9F5540080D6EC /* BikePointApp.swift in Sources */,
-				866CF7B62AA9F5560080D6EC /* BikePoint.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -879,19 +879,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		866CF7B42AA9F5560080D6EC /* BikePoint.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				866CF7B52AA9F5560080D6EC /* BikePoint.xcdatamodel */,
-			);
-			currentVersion = 866CF7B52AA9F5560080D6EC /* BikePoint.xcdatamodel */;
-			path = BikePoint.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 866CF79E2AA9F5540080D6EC /* Project object */;
 }

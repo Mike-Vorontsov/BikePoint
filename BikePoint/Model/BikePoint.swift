@@ -13,7 +13,7 @@ struct BikePoint {
     let bikes: Int?
     let location: Coordinate
     
-    init(address: String, slots: Int?, bikes: Int?, location: Coordinate, distance: Double) {
+    init(address: String, slots: Int?, bikes: Int?, location: Coordinate, distance: Double = 0) {
         self.address = address
         self.slots = slots
         self.bikes = bikes
