@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 import Combine
+import Contacts
 
 typealias Coordinate = CLLocationCoordinate2D
 
@@ -21,6 +22,7 @@ protocol Locating {
     func start()
     func stop()
     func distance(from coordinatesA: Coordinate, to coordinatesB: Coordinate) -> Double
+    func geocode(for coordinates: Coordinate) async throws -> String?
 }
 
 final class LocationService: NSObject, CLLocationManagerDelegate, Locating {
@@ -32,6 +34,9 @@ final class LocationService: NSObject, CLLocationManagerDelegate, Locating {
         return manager
     }()
     
+    private lazy var geocoder = CLGeocoder()
+    private lazy var postAddressFormatter = CNPostalAddressFormatter()
+
     // MARK: - Public
     lazy var state: LocationState = LocationState()
     
@@ -41,13 +46,23 @@ final class LocationService: NSObject, CLLocationManagerDelegate, Locating {
 
         return locationB.distance(from: locationA)
     }
-        
+    
     func start() {
         locationManager.startUpdatingLocation()
     }
     
     func stop() {
         locationManager.stopUpdatingLocation()
+    }
+    
+    func geocode(for coordinates: Coordinate) async throws -> String? {
+        let placemarks = try await geocoder.reverseGeocodeLocation(CLLocation(latitude: coordinates.latitude, longitude: coordinates.longitude))
+        
+        guard let postalAddress = placemarks.first?.postalAddress else {
+            return "Can't find address"
+        }
+        let fullAddress = postAddressFormatter.string(from: postalAddress)
+        return fullAddress.replacingOccurrences(of: "\n", with: " ")
     }
     
     // MARK: - CLLocationManagerDelegate

@@ -40,12 +40,15 @@ final class Coordinator: Coordinating {
         bikePointService: bikePointApi,
         locationService: locationService,
         mapper: stationsStateMapper,
-        navigator: stationsNavigator
+        navigator: stationsNavigator,
+        distanceFormatter: distanceFormatter
     )
     
     lazy var detailsPresenter: StationDetailsPresenter = .init(
         navigator: stationsNavigator,
-        detailsFetching: bikePointApi
+        detailsFetching: bikePointApi,
+        locationService: locationService,
+        distanceFormatter: distanceFormatter
     )
     
     lazy var navigationController: UINavigationController = UINavigationController()
@@ -53,9 +56,10 @@ final class Coordinator: Coordinating {
     lazy var stationsNavigator: StationsNavigating = StationsNavigator(
         navigator: navigationController,
         detailsPresenterResolver: { self.detailsPresenter },
-        detailsViewResolver: self.prepareStationDetailsView
+        detailsViewResolver: { self.prepareStationDetailsView() }
     )
     
+    lazy var distanceFormatter = DistanceFormatter()
     
     
     func prepareStationsListView() -> StationListsView {

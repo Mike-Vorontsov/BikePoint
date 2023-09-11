@@ -17,31 +17,13 @@ struct StationDetailsView: View {
     var details: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
-                Text(state.distance).font(.callout)
                 Text(state.address).font(.caption)
+                Text(state.distance).font(.callout)
             }
             .frame(maxWidth: .infinity)
-//            .padding(Metrics.cellPadding * 2)
-//            .background(.gray)
-//            .clipShape(RoundedRectangle(cornerRadius: Metrics.cornerRadius))
             
-            VStack(alignment: .leading) {
-                HStack{
-                    Image(systemName: "bicycle")
-                    Text("cycling time: 10m")
-                }
-                HStack{
-                    Image(systemName: "figure.walk.motion")
-                    Text("cycling time: 1h 10m")
-                }
-            }
-            .frame(maxWidth: .infinity)
-            .padding(Metrics.cellPadding * 2)
-            .background(.gray)
-            .clipShape(RoundedRectangle(cornerRadius: Metrics.cornerRadius))
         }
-        .padding(10)
-
+        .padding(Metrics.margins)
     }
     
     
@@ -51,7 +33,7 @@ struct StationDetailsView: View {
                 Button(action: {
                     state.onBack?()
                 } ){
-                    Image(systemName: "chevron.backward.square")
+                    Image(systemName: "chevron.backward")
                 }
                 Text(state.name).font(.headline)
             }
@@ -64,13 +46,13 @@ struct StationDetailsView: View {
                         details
                             .frame(width: geo.size.width / 1/3)
                         LookAroundPreview(scene: $lookAroundScene)
-                            .padding(Metrics.cellPadding)
+                            .padding(Metrics.margins)
                     }
                 } else {
                     VStack {
                         details
                         LookAroundPreview(scene: $lookAroundScene)
-                            .padding(Metrics.cellPadding)
+                            .padding(Metrics.margins)
                     }
                 }
             }
@@ -98,7 +80,7 @@ struct StationDetailsView_Previews: PreviewProvider {
             state: .init(
                 name: "Title: central london",
                 distance: "100m",
-                address: "11 myrtle gardens",
+                address: "49 Orange St London England WC2H 7HS United Kingdom",
                 coordinates: londonCenter
             )
         )

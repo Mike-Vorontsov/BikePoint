@@ -10,6 +10,7 @@ import Foundation
 enum Metrics {
     
     static var cellPadding: CGFloat = 8
+    static var margins: CGFloat = 16
     static var cornerRadius: CGFloat = 16
     static var cellHeight: CGFloat = 100
 }

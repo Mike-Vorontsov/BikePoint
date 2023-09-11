@@ -11,6 +11,8 @@ import SwiftUI
 protocol Navigating {
     func push(view: some View)
     func pop()
+    func showBar()
+    func hideBar()
 }
 
 extension UINavigationController: Navigating {
@@ -59,6 +61,14 @@ struct CustomNavigationView: UIViewRepresentable, Navigating {
     
     func pop() {
         navigationController.pop()
+    }
+    
+    func showBar() {
+        navigationController.showBar()
+    }
+    
+    func hideBar() {
+        navigationController.hideBar()
     }
     
 }

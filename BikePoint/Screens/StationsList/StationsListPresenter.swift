@@ -14,19 +14,21 @@ final class StationsListPresenter {
         bikePointService: BikePointFetching,
         locationService: Locating,
         mapper: StationsListStateMapping,
-        navigator: StationsNavigating
+        navigator: StationsNavigating,
+        distanceFormatter: DistanceFormatter
     ) {
         self.bikePointService = bikePointService
         self.locationService = locationService
         self.mapper = mapper
         self.navigator = navigator
+        self.distanceFormatter = distanceFormatter
         start()
     }
     
     private let bikePointService: BikePointFetching
     private let locationService: Locating
     private let mapper: StationsListStateMapping
-    private let distanceFormatter: DistanceFormatting = DistanceFormatter()
+    private let distanceFormatter: DistanceFormatting
     
     private let navigator: StationsNavigating
     
