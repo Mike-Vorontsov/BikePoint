@@ -68,8 +68,7 @@ extension BikePoint {
             address: dto.commonName,
             slots: dto.addOns[.emptyDocks] as? Int,
             bikes: dto.addOns[.bikes] as? Int,
-            location: Coordinate(latitude: dto.lat, longitude: dto.lon),
-            distance: .infinity
+            location: Coordinate(latitude: dto.lat, longitude: dto.lon)
         )
     }
 }

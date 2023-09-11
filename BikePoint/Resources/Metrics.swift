@@ -11,4 +11,9 @@ enum Metrics {
     
     static var cellPadding: CGFloat = 8
     static var cornerRadius: CGFloat = 16
+    static var cellHeight: CGFloat = 100
+}
+
+enum MapMetrics {
+    static var defaultCameraDistance: Double = 2000
 }

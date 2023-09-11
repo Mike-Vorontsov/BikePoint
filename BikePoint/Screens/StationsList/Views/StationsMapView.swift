@@ -41,7 +41,7 @@ struct StationsMapView<Content: View>: View {
         }
         .safeAreaInset(edge: .bottom) {
             content?()
-                .frame(height: 100)
+                .frame(height: Metrics.cellHeight)
         }
         .mapControls {
             MapUserLocationButton()
@@ -50,7 +50,12 @@ struct StationsMapView<Content: View>: View {
         .onReceive(state.$selectedMarker) { selectedMarker  in
             guard let selectedMarker else { return }
             withAnimation{
-                cameraPosition = .camera(MapCamera(centerCoordinate: selectedMarker.coordinates, distance: 2000))
+                cameraPosition = .camera(
+                    MapCamera(
+                        centerCoordinate: selectedMarker.coordinates,
+                        distance: MapMetrics.defaultCameraDistance
+                    )
+                )
             }
         }
     }
@@ -72,7 +77,12 @@ struct StationsMapView_Previews: PreviewProvider {
 
                 ]
             ),
-            content: { EmptyView() }
+            content: {
+                Text("Hello world!")
+                    .padding(10)
+                    .background()
+                    .clipShape(RoundedRectangle(cornerRadius: 15.0))
+            }
         )
     }
     
@@ -82,24 +92,9 @@ struct StationsMapView_Previews: PreviewProvider {
     )
     
     static let greenwich = CLLocationCoordinate2D(
-        latitude: 51.309865,
-        longitude: 0
+        latitude: 51.477928,
+        longitude: -0.001545
     )
 
 }
 
-extension CLLocationCoordinate2D {
-    static var cityHallLocation  = CLLocationCoordinate2D(
-        latitude: 51.509865,
-        longitude: -0.118092
-    )
-}
-extension MKCoordinateRegion {
-    static var london = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(
-            latitude: 51.509865,
-            longitude: -0.118092
-        ),
-        span: .init(latitudeDelta: 2, longitudeDelta: 2)
-    )
-}

@@ -21,8 +21,8 @@ struct StationListsView: View {
                         .clipShape(RoundedRectangle(cornerRadius: Metrics.cornerRadius))
                         .id(cellState.name)
                     }
+                    .animation(.default, value: state.stations)
                 }
-                .animation(.default, value: state.stations)
             }
             .onReceive(state.$selectedCell) { newSelectedIndex in
                 withAnimation {
