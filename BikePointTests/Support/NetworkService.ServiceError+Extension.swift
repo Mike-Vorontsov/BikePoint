@@ -9,6 +9,7 @@ import Foundation
 @testable import BikePoint
 
 extension NetworkService.ServiceError {
+    /// Strings to simplify testing that correct error caught , avoiding enums
     var debugString: String {
         switch self {
         case .wrongResponse:

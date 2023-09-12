@@ -21,6 +21,6 @@ final class MockBikePointStore: BikePointPersisting {
     }
     
     func allStations() async throws -> [BikePoint] {
-        try mocks.allStations.record(())
+        try mocks.allStations.record()
     }
 }
