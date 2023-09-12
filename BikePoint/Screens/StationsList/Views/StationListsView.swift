@@ -17,7 +17,7 @@ struct StationListsView: View {
                         StationCellView(
                             state: cellState
                         )
-                        .background(state.selectedCell?.name == cellState.name ? .green : .blue)
+                        .background(state.selectedCell?.name == cellState.name ? .available : .focus)
                         .clipShape(RoundedRectangle(cornerRadius: Metrics.cornerRadius))
                         .id(cellState.name)
                     }

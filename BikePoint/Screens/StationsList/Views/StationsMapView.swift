@@ -27,7 +27,7 @@ struct StationsMapView<Content: View>: View {
                             .fill(.background)
 
                         RoundedRectangle(cornerRadius: Metrics.cornerRadius)
-                            .stroke(state.selectedMarker?.title == markerState.title ? .green : .blue, lineWidth: 5.0)
+                            .stroke(state.selectedMarker?.title == markerState.title ? .available : .focus, lineWidth: 5.0)
                             
                         Image(systemName: "bicycle")
                             .padding(Metrics.cellPadding)
