@@ -8,13 +8,13 @@
 import UIKit
 import SwiftUI
 
+/// Convenience protocol for basic navigation
 protocol Navigating {
     func push(view: some View)
     func pop()
-    func showBar()
-    func hideBar()
 }
 
+/// Extension to make NavigationController to operate with SwiftUI views
 extension UINavigationController: Navigating {
     func push(view: some View) {
         let hostingVC = UIHostingController(rootView: view)
@@ -24,51 +24,22 @@ extension UINavigationController: Navigating {
     func pop() {
         popViewController(animated: true)
     }
-    
-    func showBar() {
-        navigationBar.isHidden = false
-    }
-    
-    func hideBar() {
-        navigationBar.isHidden = false
-    }
 }
 
-struct CustomNavigationView: UIViewRepresentable, Navigating {
+/// Swift UI wrapper around  navigation controller
+struct CustomNavigationView: UIViewRepresentable {
     private let navigationController: UINavigationController
-    var navigator: Navigating { navigationController as Navigating }
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-    
-    init(content: some View) {
-        let hostingVC = UIHostingController(rootView: content)
-        navigationController = UINavigationController(rootViewController: hostingVC)
-    }
 
+    // Public interface for NavigationController
+    var navigator: Navigating { navigationController as Navigating }
+    
     func makeUIView(context: Context) -> UIView {
         navigationController.view
     }
 
-    func updateUIView(_ uiView: UIView, context: Context) {
-        
-    }
-    
-    func push(view: some View) {
-        navigationController.push(view: view)
-    }
-    
-    func pop() {
-        navigationController.pop()
-    }
-    
-    func showBar() {
-        navigationController.showBar()
-    }
-    
-    func hideBar() {
-        navigationController.hideBar()
-    }
-    
+    func updateUIView(_ uiView: UIView, context: Context) {}
 }

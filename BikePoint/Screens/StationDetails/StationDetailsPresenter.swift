@@ -8,23 +8,31 @@
 import Foundation
 import Combine
 
+/// Protocol describing public interface of StationDetailsPresenter
 protocol StationDetailsPresenting: AnyObject {
+    /// Selected bike point to be shown
     var selectedBikePoint: BikePoint? { get set }
+    
+    // State of particular UI
     var state: StationDetailsState { get }
 }
 
+/// Presenter for Details screen
 final class StationDetailsPresenter: StationDetailsPresenting {
     
     private let navigator: StationsNavigating
-    private let detailsFetching: BikePointFetching
     private let locationService: Locating
     private let distanceFormatter: DistanceFormatter
     
     private var discardBag: [AnyCancellable] = []
     
-    init(navigator: StationsNavigating, detailsFetching: BikePointFetching, locationService: Locating, distanceFormatter: DistanceFormatter) {
+    /// Initialise new Presenter
+    /// - Parameters:
+    ///   - navigator: navigator for moving between screens on Scenes flow
+    ///   - locationService: service for monitoring location
+    ///   - distanceFormatter: formatter to format distance to human readable string
+    init(navigator: StationsNavigating, locationService: Locating, distanceFormatter: DistanceFormatter) {
         self.navigator = navigator
-        self.detailsFetching = detailsFetching
         self.locationService = locationService
         self.distanceFormatter = distanceFormatter
         start()
@@ -49,10 +57,9 @@ final class StationDetailsPresenter: StationDetailsPresenting {
                 let distance = self.locationService.distance(from: selectedBikePoint.location, to: location)
                 state.distance = distanceFormatter.string(for: distance)
             }
-
             
             Task {
-                let geocode = try await locationService.geocode(for: selectedBikePoint.location)
+                let geocode = try await locationService.address(for: selectedBikePoint.location)
                 
                 await MainActor.run {
                     state.address = geocode ?? ""
@@ -77,8 +84,5 @@ final class StationDetailsPresenter: StationDetailsPresenting {
             .receive(on: DispatchQueue.main)
             .assign(to: \.distance, on: state)
             .store(in: &discardBag)
-        
     }
-    
 }
-

@@ -32,7 +32,7 @@ struct StationDetailsView: View {
             HStack(alignment: .center) {
                 Button(action: {
                     state.onBack?()
-                } ){
+                }){
                     Image(systemName: "chevron.backward")
                 }
                 Text(state.name).font(.headline)
@@ -63,7 +63,7 @@ struct StationDetailsView: View {
 
     }
     
-    private func getLookAroundScene(for coordinates: Coordinate) {
+    private func getLookAroundScene(for coordinates: Coordinates) {
         lookAroundScene = nil
         Task {
             let request = MKLookAroundSceneRequest(coordinate: coordinates)

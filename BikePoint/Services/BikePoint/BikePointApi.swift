@@ -7,21 +7,30 @@
 
 import Foundation
 
+/// Protocol describing service to fetch BikePoints
 protocol BikePointFetching {
+    /// Load all bike points
+    /// - Returns: collection of bike points
     func loadBikePoints() async throws -> [BikePoint]
 }
 
+/// Service to fetch bike points, store locally and fall back to local storage next time network failed
 final class BikePointApi: BikePointFetching {
-    private let networkService: NetworkFecthing
+    private let networkService: NetworkFetching
     private let store: BikePointPersisting
     
-    init(networkService: NetworkFecthing, store: BikePointPersisting) {
+    /// Init new service with Network Service and Storage service
+    /// - Parameters:
+    ///   - networkService: Service to load and Parse data from Network
+    ///   - store: Service to store resulted BikePoints locally
+    init(networkService: NetworkFetching, store: BikePointPersisting) {
         self.networkService = networkService
         self.store = store
     }
     
     func loadBikePoints() async throws -> [BikePoint] {
         do {
+            // Load DTO from service, and convert it to "operational" data model
             let response = try await networkService
                 .load(from: BikePointRequest.allPoints)
                 .map {
@@ -33,10 +42,12 @@ final class BikePointApi: BikePointFetching {
             return response
 
         } catch let netError {
+            // If error - try to fall back to local storage
             do {
                 let response = try await store.allStations()
                 return response
             } catch _ {
+                // If local storage failed - return original network error instead.
                 throw netError
             }
         }        

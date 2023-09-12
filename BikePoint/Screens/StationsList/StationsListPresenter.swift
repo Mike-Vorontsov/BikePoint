@@ -8,8 +8,29 @@
 import Foundation
 import Combine
 
+/// Protocol for StationsListPresenter public interface
+protocol StationsListPresenting {
+    
+    /// State for StationsListView
+    var listState: StationsListState { get }
+    
+    /// State for StationsMapView
+    var markersState: StationsMapState { get }
+
+    /// Start presenter operations. Invoked automatically on Initialisation at the moment
+    func start()
+}
+
+/// Presenter to operate with Stations List and Map screen and both views on that screen
 final class StationsListPresenter {
     
+    /// Initialise presenter using
+    /// - Parameters:
+    ///   - bikePointService: service for fetching BikePoints
+    ///   - locationService: service for monitoring current location
+    ///   - mapper: mapper to convert BikePoint to StationViewCell
+    ///   - navigator: navigator to navigate between different screens
+    ///   - distanceFormatter: formatter to convert distance number into a string
     init(
         bikePointService: BikePointFetching,
         locationService: Locating,
@@ -31,24 +52,28 @@ final class StationsListPresenter {
     private let distanceFormatter: DistanceFormatting
     
     private let navigator: StationsNavigating
-    
+    private var latestLocation: Coordinates?
+    @Published private var latestPoints: [BikePoint]?
+
     private var discardBag: [AnyCancellable] = []
     
-    private var latestLocation: Coordinate?
-    @Published private var latestPoints: [BikePoint]?
+    // MARK: - Public
     
-    lazy var state: StationsListState = .init(stations: [])
+    lazy var listState: StationsListState = .init(stations: [])
     lazy var markersState: StationsMapState = .init(markers: [])
-    
-    // MARK: Helpers
     
     func start() {
         setupBindings()
         loadAllPoints()
         monitorLocation()
     }
+
+    // MARK: Helpers
     
+    /// Setup Combine bindings
     private func setupBindings() {
+        
+        // Monitor and react when list of BikePoints changes
         $latestPoints
             .compactMap{ $0 }
             .filter{ !$0.isEmpty }
@@ -59,6 +84,7 @@ final class StationsListPresenter {
             }
             .store(in: &discardBag)
 
+        // Monitor and react when current location changes
         locationService.state
             .$location
             .compactMap{ $0 }
@@ -72,11 +98,14 @@ final class StationsListPresenter {
 
     }
     
-    private func updateDistance(of points: [BikePoint], to location: Coordinate) {
+    /// Helper to update distance for each ViewState
+    /// - Parameters:
+    ///   - points: all points
+    ///   - location: current locations
+    private func updateDistance(of points: [BikePoint], to location: Coordinates) {
         // Do not update distance if no points ready yet
-        guard state.stations.count > 0 else { return }
+        guard listState.stations.count > 0 else { return }
         
-        //        Task {
         let updatedCells = points
             .map {
                 (
@@ -89,30 +118,35 @@ final class StationsListPresenter {
             }
             .map{ input in
                 let distance = distanceFormatter.string(for: input.distance)
-                let cellState = state.stations.first {  $0.name == input.point.address }
+                let cellState = listState.stations.first {  $0.name == input.point.address }
                 ?? mapper.map(input.point, distance: distance) { [weak self] in
                     self?.didSelect(bikePoint: input.point)
                 }
                 cellState.distance = distance
                 return cellState
             }
-        self.state.stations = updatedCells
+        self.listState.stations = updatedCells
     }
     
+    /// Start monitoring location
     private func monitorLocation() {
         locationService.start()
     }
     
-    private func updateStates(with points: [BikePoint], location: Coordinate?) {
+    /// Update states when list of bike points changes
+    /// - Parameters:
+    ///   - points: bike points
+    ///   - location: location to calculate distance from
+    private func updateStates(with points: [BikePoint], location: Coordinates?) {
         let cells = points
-            .map { (station) -> (distance:Double?, station: BikePoint) in
+            .map { (station) -> (distance: Double?, station: BikePoint) in
                 let distance: Double?
                 if let location {
                     distance = locationService.distance(from: station.location, to: location)
                 } else {
                     distance = nil
                 }
-                return (distance:distance, station: station)
+                return (distance: distance, station: station)
             }
             .sorted{
                 $0.distance ?? .infinity < $1.distance ?? .infinity
@@ -136,16 +170,18 @@ final class StationsListPresenter {
             }
         }
         
-        state.stations = cells
+        listState.stations = cells
         markersState.markers = markers
     }
     
+    /// Helper to update selected point
+    /// - Parameter bikePoint: bike point that had selected
     private func didSelect(bikePoint: BikePoint) {
-        if self.state.selectedCell?.name == bikePoint.address {
+        if self.listState.selectedCell?.name == bikePoint.address {
             self.navigator.showDetails(for: bikePoint)
         } else {
-            let selectedCell = state.stations.first{ bikePoint.address == $0.name }
-            self.state.selectedCell = selectedCell
+            let selectedCell = listState.stations.first{ bikePoint.address == $0.name }
+            self.listState.selectedCell = selectedCell
             
             let selectedMarker = markersState.markers.first{ bikePoint.address == $0.title }
             self.markersState.selectedMarker = selectedMarker
@@ -153,12 +189,12 @@ final class StationsListPresenter {
         
     }
     
+    /// Helper to load all points
     private func loadAllPoints() {
         Task {
             do {
                 let points = try await bikePointService.loadBikePoints()
-                latestPoints = points
-                
+                latestPoints = points                
             } catch {
                 print("Error: \(error)")
             }

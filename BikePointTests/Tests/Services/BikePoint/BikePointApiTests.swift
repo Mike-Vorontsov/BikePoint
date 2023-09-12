@@ -104,7 +104,7 @@ final class BikePointApiTests: XCTestCase {
             throw FakeError.testError
         }
         mockStore.mocks.allStations.updateMock {
-            [BikePoint(address: "Fake from storage", slots: nil, bikes: nil, location: Coordinate(latitude: 0, longitude: 0))]
+            [BikePoint(address: "Fake from storage", slots: nil, bikes: nil, location: Coordinates(latitude: 0, longitude: 0))]
         }
         
         // When

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Common metrics for layout
 enum Metrics {
     
     static var cellPadding: CGFloat = 8
@@ -15,6 +16,7 @@ enum Metrics {
     static var cellHeight: CGFloat = 100
 }
 
+/// Common metrics for maps
 enum MapMetrics {
     static var defaultCameraDistance: Double = 2000
 }

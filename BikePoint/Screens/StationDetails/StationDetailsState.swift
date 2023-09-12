@@ -7,8 +7,9 @@
 
 import Foundation
 
+/// State representing Details of particular BikeStation
 final class StationDetailsState: ObservableObject, Identifiable {
-    init(name: String, distance: String, address: String, coordinates: Coordinate, onBack: (() -> ())? = nil) {
+    init(name: String, distance: String, address: String, coordinates: Coordinates, onBack: (() -> ())? = nil) {
         self.name = name
         self.distance = distance
         self.address = address
@@ -19,7 +20,7 @@ final class StationDetailsState: ObservableObject, Identifiable {
     @Published var name: String
     @Published var distance: String
     @Published var address: String
-    @Published var coordinates: Coordinate
+    @Published var coordinates: Coordinates
     
     var onBack: (() -> ())?
 }

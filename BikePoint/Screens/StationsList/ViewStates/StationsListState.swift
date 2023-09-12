@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+/// Thin ViewState representing List of Stations. No logic allowed here.
 final class StationsListState: ObservableObject {
     @Published var stations: [StationCellState]
     @Published var selectedCell: StationCellState? = nil
@@ -17,6 +18,7 @@ final class StationsListState: ObservableObject {
     }
 }
 
+/// View state representing particular element of the List. No logic allowed here.
 final class StationCellState: ObservableObject, Identifiable, Equatable {
     static func == (lhs: StationCellState, rhs: StationCellState) -> Bool {
         lhs.id == rhs.id

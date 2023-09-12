@@ -52,7 +52,7 @@ private extension BikePointStore {
         var bikes: Int?
         var emptyDocks: Int?
         
-        init(name: String, coordinates: Coordinate, bikes: Int? = nil, emptyDocks: Int? = nil) {
+        init(name: String, coordinates: Coordinates, bikes: Int? = nil, emptyDocks: Int? = nil) {
             self.name = name
             self.lat = coordinates.latitude
             self.lon = coordinates.longitude
@@ -76,7 +76,7 @@ private extension BikePoint {
             address: dataModel.name,
             slots: dataModel.emptyDocks,
             bikes: dataModel.bikes,
-            location: Coordinate(
+            location: Coordinates(
                 latitude: dataModel.lat,
                 longitude: dataModel.lon
             )

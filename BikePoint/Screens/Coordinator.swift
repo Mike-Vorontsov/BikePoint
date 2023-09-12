@@ -16,6 +16,7 @@ protocol StationsCoordinating {
 
 protocol Coordinating: StationsCoordinating {}
 
+/// Coordinator to create necessary components for production and inject necessary dependencies.
 final class Coordinator: Coordinating {
     
     // MARK: - Mappers and Formatters
@@ -57,7 +58,6 @@ final class Coordinator: Coordinating {
     
     lazy var detailsPresenter: StationDetailsPresenter = .init(
         navigator: stationsNavigator,
-        detailsFetching: bikePointApi,
         locationService: locationService,
         distanceFormatter: distanceFormatter
     )
@@ -65,7 +65,7 @@ final class Coordinator: Coordinating {
     // MARK: - Views
     
     func prepareStationsListView() -> StationListsView {
-        StationListsView(state: stationsPresenter.state)
+        StationListsView(state: stationsPresenter.listState)
     }
     
     func prepareStationDetailsView() -> StationDetailsView {
@@ -80,9 +80,5 @@ final class Coordinator: Coordinating {
         navigationController.push(view: prepareStationsMapView())
         navigationController.navigationBar.isHidden = true
         return CustomNavigationView(navigationController: navigationController)
-    }
-    
-    func prepareRootView() -> RootView {
-        RootView(coordinator: self)
     }
 }

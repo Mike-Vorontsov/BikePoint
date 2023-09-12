@@ -7,18 +7,25 @@
 
 import Foundation
 
-protocol NetworkFecthing {
+/// Protocol describing API fetching service.
+protocol NetworkFetching {
+    /// Load DTO object using particular API request.
+    /// - Parameter request: request containing path, query and expected response DTO type
+    /// - Returns: parsed DTO type or throws error
     func load<DTO: Decodable>(from request: any ApiRequesting<DTO>) async throws -> DTO
 }
 
+///  Protocol for API Requests, containing URL  path and query params and  type of expected DTO response. Can be expanded to include request methods, body, etc. if needed
 protocol ApiRequesting<ResponseType> {
     associatedtype ResponseType: Decodable
     var path: String { get }
     var query: [URLQueryItem] { get }
 }
 
-final class NetworkService: NetworkFecthing {
+/// Service to fetch data from Network  Host, process common errors and parse into convenient DTO objects
+final class NetworkService: NetworkFetching {
     
+    /// Network Service error wrapper
     enum ServiceError: Error {
         case wrongResponse(URLResponse)
         case errorCode(Int)
@@ -27,6 +34,7 @@ final class NetworkService: NetworkFecthing {
         case parsing(error: Error, data: Data)
     }
     
+    /// API configuration: host URL, and Headers.
     struct ApiConfig {
         let baseUrl: URL
         let headers: [String: String]
@@ -34,13 +42,18 @@ final class NetworkService: NetworkFecthing {
     
     private let config: ApiConfig
     private let session: URLSessionProtocol
-
-    internal init(config: ApiConfig, session: URLSessionProtocol = URLSession.shared) {
+    
+    /// Initialise new Service using provided configuration and session
+    /// - Parameters:
+    ///   - config: configuration with Host and Auth headers
+    ///   - session: URL session to actually perform request. Foundation's URL shared session by default  or can be switched to a mock for testing.
+    init(config: ApiConfig, session: URLSessionProtocol = URLSession.shared) {
         self.config = config
         self.session = session
     }
     
-    private lazy var decoder: JSONDecoder = .init()    
+    /// Potentially decoders can be mocked and injected internally for testing, however i don't see any reasons to do so.
+    private lazy var decoder: JSONDecoder = .init()
     
     // MARK: - Public
     func load<DTO: Decodable>(from request: any ApiRequesting<DTO>) async throws -> DTO {
@@ -50,6 +63,9 @@ final class NetworkService: NetworkFecthing {
     }
     
     // MARK: - Private helpers
+    /// Helper function to convert API Request into native URL request
+    /// - Parameter request: request to conver
+    /// - Returns: URL request to use with native URL session
     private func urlRequest(from request: any ApiRequesting) -> URLRequest {
         let fullUrl = config.baseUrl
             .appending(path: request.path)
@@ -60,7 +76,10 @@ final class NetworkService: NetworkFecthing {
         urlRequest.allHTTPHeaderFields = config.headers
         return urlRequest
     }
-
+    
+    /// Helper method to Load Data from URL Request and process common network errors (excluding parsing)
+    /// - Parameter request: URL request to perform
+    /// - Returns: Data from endpoint or throws ServiceError
     private func loadData(for request: URLRequest) async throws -> Data {
         
         do {
@@ -86,6 +105,9 @@ final class NetworkService: NetworkFecthing {
         }
     }
     
+    /// Helper to load and parse object in DTO using API request
+    /// - Parameter request: API Requests contains path, query and expected response type
+    /// - Returns: parsed DTO object
     private func load<DTO: Decodable>(for request: URLRequest) async throws -> DTO {
         let data = try await loadData(for: request)
         

@@ -10,7 +10,7 @@ import XCTest
 
 @testable import BikePoint
 
-final class MockNetworkService: NetworkFecthing {
+final class MockNetworkService: NetworkFetching {
     enum TestsError: Error {
         case mismatchedGenericType
     }
