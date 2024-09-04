@@ -15,7 +15,7 @@ final class MockURLSession: URLSessionProtocol {
             dataForRequest: .init(
                 mockResults: (
                     (
-                        mockStringData.data(using: .utf8)!,
+                        mockStringData.data(using: .utf8)!, 
                         HTTPURLResponse(
                             url: URL(string: "fake://api")!,
                             statusCode: statusCode,

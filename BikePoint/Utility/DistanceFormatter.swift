@@ -8,7 +8,11 @@
 import Foundation
 import MapKit
 
+/// Formatter to present distance in human readable way
 protocol DistanceFormatting {
+    /// Format any given distance to the string
+    /// - Parameter distance: distance. Can be optional.
+    /// - Returns: String representing the distance.
     func string(for distance: Double?) -> String
 }
 
