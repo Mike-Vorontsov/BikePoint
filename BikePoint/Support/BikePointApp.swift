@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUIViewLayerImp
 
 @main
 struct BikePointApp: App {
@@ -14,8 +15,14 @@ struct BikePointApp: App {
     
     var body: some Scene {
         WindowGroup {
-            coordinator.prepareStationsNavigationView()
+            coordinator
+                .prepareStationsNavigationView()
                 .ignoresSafeArea()
+                .environment(
+                    ThemeProvider(
+                        currentTheme: .init(available: .available, focus: .focus)
+                    )
+                )
         }
     }
 }

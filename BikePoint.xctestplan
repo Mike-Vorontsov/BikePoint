@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "7BFA8A80-C074-44A3-94EC-4854AECAD5BB",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Implementations\/BikePointFeatureImp",
+        "identifier" : "BikePointFeatureImpTests",
+        "name" : "BikePointFeatureImpTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Implementations\/NetworkImp",
+        "identifier" : "NetworkImpTests",
+        "name" : "NetworkImpTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Implementations\/BikePointApiImp",
+        "identifier" : "BikePointApiImpTests",
+        "name" : "BikePointApiImpTests"
+      }
+    }
+  ],
+  "version" : 1
+}

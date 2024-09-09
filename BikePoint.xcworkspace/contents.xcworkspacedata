@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileSystemSynchronizedGroup
+      location = "group:Implementations"
+      name = "Implementations">
+   </FileSystemSynchronizedGroup>
+   <FileSystemSynchronizedGroup
+      location = "group:Interfaces"
+      name = "Interfaces">
+   </FileSystemSynchronizedGroup>
+   <FileSystemSynchronizedGroup
+      location = "group:Foundations"
+      name = "Foundations">
+   </FileSystemSynchronizedGroup>
+   <FileRef
+      location = "group:BikePoint.xcodeproj">
+   </FileRef>
+</Workspace>
