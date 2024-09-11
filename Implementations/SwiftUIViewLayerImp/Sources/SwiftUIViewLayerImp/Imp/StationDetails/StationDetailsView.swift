@@ -8,11 +8,12 @@
 import SwiftUI
 import Combine
 import MapKit
-import ViewLayerInterface
-import Common
 
-public struct StationDetailsView: View {
-    public init(state: StationDetailsState) {
+import Common
+import ViewLayerInterface
+
+struct StationDetailsView: View {
+    init(state: StationDetailsState) {
         self.state = state
     }
     
@@ -38,7 +39,7 @@ public struct StationDetailsView: View {
         .padding(Metrics.margins)
     }
     
-    public var body: some View {
+    var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .center) {
                 Button(

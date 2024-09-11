@@ -11,6 +11,7 @@ import UIKit
 
 import BikePointApiInterface
 import LocationServiceInterface
+import ViewLayerInterface
 
 import SwiftUIViewLayerImp
 import NetworkImp
@@ -19,77 +20,61 @@ import BikePointFeatureImp
 import LocationServiceImp
 
 protocol StationsCoordinating {
-    func prepareStationsListView() -> StationListsView
-    func prepareStationDetailsView() -> StationDetailsView
+    func prepareStationsMapView() -> Navigatable
+    func prepareStationDetailsView() -> Navigatable
 }
 
 protocol Coordinating: StationsCoordinating {}
 
 /// Coordinator to create necessary components for production and inject necessary dependencies.
 final class Coordinator: Coordinating {
-    
-    // MARK: - Mappers and Formatters
-    lazy var stationsStateMapper: StationsListStateMapping = StationsListStateMapper()
-    lazy var distanceFormatter = DistanceFormatter()
 
     // MARK: - Services
-    lazy var netwrokService: NetworkService = .init(config:
+    lazy var networkService: NetworkService = .init(config:
             .init(
                 baseUrl: URL(string: "https://api.tfl.gov.uk")!,
                 headers: [:]
             )
     )
-    lazy var persistanceStore: BikePointPersisting = BikePointStore()
     lazy var locationService: Locating = LocationService()
     
-    lazy var bikePointApi: BikePointFetching = BikePointApi(
-        networkService: netwrokService,
-        store: persistanceStore
-    )
+    lazy var bikePointApi: BikePointFetching = BikePointApiModule.shared.prepareApi(networkService: networkService)
     
     // MARK: - Navigation
-    lazy var navigationController: UINavigationController = UINavigationController()
-
-    lazy var stationsNavigator = StationsNavigator(
-        navigation: navigationController,
-        detailsPresenterResolver: {[unowned self] in self.detailsPresenter },
-        detailsViewResolver: {[unowned self] in AnyView(self.prepareStationDetailsView()) }
-    )
+    lazy var navigator: Navigating  = SwiftUIViewLayerModule.share.prepareNavigator()
+    
+    lazy var stationsNavigator: StationsNavigating = {
+        BikePointFeatureModule.shared.prepareNavigator(
+            navigation: navigator,
+            detailsPresenterResolver: {[unowned self] in self.detailsPresenter },
+            detailsViewResolver: {[unowned self] in self.prepareStationDetailsView() })
+    }()
     
     // MARK: - Presenters
-    lazy var stationsPresenter: StationsListPresenter = .init(
+    lazy var stationsPresenter: StationsListPresenting = BikePointFeatureModule.shared.prepareStationListPresenter(
         bikePointService: bikePointApi,
         locationService: locationService,
-        mapper: stationsStateMapper,
-        navigator: stationsNavigator,
-        distanceFormatter: distanceFormatter
+        navigator: stationsNavigator
     )
     
-    lazy var detailsPresenter: StationDetailsPresenter = .init(
+    lazy var detailsPresenter: StationDetailsPresenting = BikePointFeatureModule.shared.prepareStationDetailsPresenter(
         navigator: stationsNavigator,
-        locationService: locationService,
-        distanceFormatter: distanceFormatter
+        locationService: locationService
     )
     
     // MARK: - Views
-    
-    func prepareStationsListView() -> StationListsView {
-        StationListsView(state: stationsPresenter.listState)
+    func prepareStationDetailsView() -> Navigatable {
+        SwiftUIViewLayerModule.share.prepareStationDetailsView(state: detailsPresenter.state)
     }
     
-    func prepareStationDetailsView() -> StationDetailsView {
-        StationDetailsView(state: detailsPresenter.state)
+    func prepareStationsMapView() -> Navigatable {
+        SwiftUIViewLayerModule.share.prepareStationsMapView(
+            mapState: stationsPresenter.markersState,
+            listState: stationsPresenter.listState
+        )
     }
     
-    func prepareStationsMapView() -> StationsMapView<StationListsView> {
-        StationsMapView(state: self.stationsPresenter.markersState) {
-            self.prepareStationsListView()
-        }
-    }
-    
-    func prepareStationsNavigationView() -> CustomNavigationView {
-        navigationController.push(view: AnyView(prepareStationsMapView()))
-        navigationController.navigationBar.isHidden = true
-        return CustomNavigationView(navigationController: navigationController)
+    func prepareRootView() -> AnyView {
+        SwiftUIViewLayerModule.share.prepareRootView(startingView: prepareStationsMapView())
     }
 }

@@ -19,7 +19,7 @@ final public class BikePointApi: BikePointFetching {
     /// - Parameters:
     ///   - networkService: Service to load and Parse data from Network
     ///   - store: Service to store resulted BikePoints locally
-    public init(networkService: NetworkFetching, store: BikePointPersisting) {
+    init(networkService: NetworkFetching, store: BikePointPersisting) {
         self.networkService = networkService
         self.store = store
     }

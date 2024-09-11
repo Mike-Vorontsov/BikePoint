@@ -12,7 +12,7 @@ import ViewLayerInterface
 import BikePointApiInterface
 
 /// Protocol for component that maps BikePoint model to particular Cell ViewState
-public protocol StationsListStateMapping {
+protocol StationsListStateMapping {
     /// Map BikePoint model to particular ViewState
     /// - Parameters:
     ///   - point: BikePoint to map
@@ -23,11 +23,11 @@ public protocol StationsListStateMapping {
 }
 
 /// Mapper to convert BikePoint model to particular Cell ViewState
-final public class StationsListStateMapper: StationsListStateMapping {
+final class StationsListStateMapper: StationsListStateMapping {
     
-    public init() {}
+    init() {}
     
-    public func map(_ point: BikePoint, distance: String, didSelect: @escaping ()->() ) -> StationCellState {
+    func map(_ point: BikePoint, distance: String, didSelect: @escaping ()->() ) -> StationCellState {
         var comment = ["Available -"]
         if let bikes = point.bikes {
             comment.append("bikes: \(bikes);")

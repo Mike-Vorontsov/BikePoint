@@ -23,7 +23,7 @@ public protocol StationsNavigating {
 }
 
 /// Navigator to perform navigation between different screens in Stations flow and pass necessary parameters to relevant components in needed
-final public class StationsNavigator: StationsNavigating {
+final class StationsNavigator: StationsNavigating {
     private let navigation: Navigating
     
     /// closure to resolve active DetailsPresenter when needed
@@ -37,7 +37,7 @@ final public class StationsNavigator: StationsNavigating {
     ///   - navigation: UI component used for navigation. Can be UINavigationController
     ///   - detailsPresenterResolver: closure to resolve active DetailsPresenter when needed
     ///   - detailsViewResolver: closure to resolve DetailsView when needed
-    public init(
+    init(
         navigation: Navigating,
         detailsPresenterResolver: @escaping (() -> (StationDetailsPresenting)),
         detailsViewResolver: @escaping (() -> (Navigatable))
@@ -47,11 +47,11 @@ final public class StationsNavigator: StationsNavigating {
         self.detailsViewResolver = detailsViewResolver
     }
 
-    public func dismissDetails() {
+    func dismissDetails() {
         navigation.pop()
     }
     
-    public func showDetails(for bikePoint: BikePoint) {
+    func showDetails(for bikePoint: BikePoint) {
         detailsPresenterResolver().selectedBikePoint = bikePoint
         navigation.push(
             view: detailsViewResolver()

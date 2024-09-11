@@ -23,7 +23,7 @@ public protocol StationDetailsPresenting: AnyObject {
 }
 
 /// Presenter for Details screen
-public final class StationDetailsPresenter: StationDetailsPresenting {
+final class StationDetailsPresenter: StationDetailsPresenting {
     
     private let navigator: StationsNavigating
     private let locationService: Locating
@@ -36,14 +36,14 @@ public final class StationDetailsPresenter: StationDetailsPresenting {
     ///   - navigator: navigator for moving between screens on Scenes flow
     ///   - locationService: service for monitoring location
     ///   - distanceFormatter: formatter to format distance to human readable string
-    public init(navigator: StationsNavigating, locationService: Locating, distanceFormatter: DistanceFormatter) {
+    init(navigator: StationsNavigating, locationService: Locating, distanceFormatter: DistanceFormatter) {
         self.navigator = navigator
         self.locationService = locationService
         self.distanceFormatter = distanceFormatter
         start()
     }
     
-    public lazy var state: StationDetailsState = .init(
+    lazy var state: StationDetailsState = .init(
         name: "",
         distance: "",
         address: "",
@@ -52,7 +52,7 @@ public final class StationDetailsPresenter: StationDetailsPresenting {
         self?.navigator.dismissDetails()
     }
     
-    public var selectedBikePoint: BikePoint? {
+    var selectedBikePoint: BikePoint? {
         didSet {
             guard let selectedBikePoint else { return }
             state.name = selectedBikePoint.address

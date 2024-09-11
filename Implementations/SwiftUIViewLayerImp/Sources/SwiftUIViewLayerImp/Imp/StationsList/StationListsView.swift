@@ -8,8 +8,8 @@
 import SwiftUI
 import ViewLayerInterface
 
-public struct StationListsView: View {
-    public init(state: StationsListState) {
+struct StationListsView: View {
+    init(state: StationsListState) {
         self.state = state
     }
         
@@ -17,7 +17,7 @@ public struct StationListsView: View {
     
     @Environment(ThemeProvider.self) private var themeProvider: ThemeProvider
       
-    public var body: some View {
+    var body: some View {
         ScrollViewReader { value in
             ScrollView(.horizontal) {
                 LazyHStack {

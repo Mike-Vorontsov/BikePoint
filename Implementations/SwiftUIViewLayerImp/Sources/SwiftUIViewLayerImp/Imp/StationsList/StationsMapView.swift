@@ -10,17 +10,9 @@ import MapKit
 import Combine
 import ViewLayerInterface
 
-public struct StationsMapView<Content: View>: View {
-//    internal init(state: StationsMapState, cameraPosition: MapCameraPosition = .userLocation(
-//        followsHeading: true,
-//        fallback: .automatic
-//    ), content: (() -> Content)? = nil) {
-//        self.state = state
-//        self.cameraPosition = cameraPosition
-//        self.content = content
-//    }
+struct StationsMapView<Content: View>: View {
     
-    public init(
+    init(
         state: StationsMapState,
         content: (() -> Content)? = nil
     ) {
@@ -39,7 +31,7 @@ public struct StationsMapView<Content: View>: View {
     
     let content: (() -> Content)?
     
-    public var body: some View {
+    var body: some View {
         Map(position: $cameraPosition) {
             ForEach(state.markers) { markerState in
                 Annotation(markerState.title, coordinate: markerState.coordinates, anchor: .bottom) {

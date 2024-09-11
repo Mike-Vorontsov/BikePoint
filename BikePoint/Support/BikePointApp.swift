@@ -16,7 +16,7 @@ struct BikePointApp: App {
     var body: some Scene {
         WindowGroup {
             coordinator
-                .prepareStationsNavigationView()
+                .prepareRootView()
                 .ignoresSafeArea()
                 .environment(
                     ThemeProvider(

@@ -27,7 +27,7 @@ public protocol StationsListPresenting {
 }
 
 /// Presenter to operate with Stations List and Map screen and both views on that screen
-final public class StationsListPresenter {
+final class StationsListPresenter: StationsListPresenting {
     
     /// Initialise presenter using
     /// - Parameters:
@@ -36,7 +36,7 @@ final public class StationsListPresenter {
     ///   - mapper: mapper to convert BikePoint to StationViewCell
     ///   - navigator: navigator to navigate between different screens
     ///   - distanceFormatter: formatter to convert distance number into a string
-    public init(
+    init(
         bikePointService: BikePointFetching,
         locationService: Locating,
         mapper: StationsListStateMapping,
@@ -67,7 +67,7 @@ final public class StationsListPresenter {
     public lazy var listState: StationsListState = .init(stations: [])
     public lazy var markersState: StationsMapState = .init(markers: [])
     
-    public func start() {
+    func start() {
         setupBindings()
         loadAllPoints()
         monitorLocation()

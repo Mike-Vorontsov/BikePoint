@@ -11,12 +11,10 @@ import SwiftData
 import Common
 import BikePointApiInterface
 
-final public class BikePointStore: BikePointPersisting {
-    public init() {}
-        
+final class BikePointStore: BikePointPersisting {
     lazy var modelContainer = try! ModelContainer(for: BikePointModel.self)
     
-    public func save(_ stations: [BikePoint]) async  {
+    func save(_ stations: [BikePoint]) async  {
         guard !stations.isEmpty else { return }
         await MainActor.run {
             let context = modelContainer.mainContext
@@ -28,7 +26,7 @@ final public class BikePointStore: BikePointPersisting {
         }
     }
     
-    public func allStations() async throws -> [BikePoint] {
+    func allStations() async throws -> [BikePoint] {
         let fetchDescriptor = FetchDescriptor<BikePointModel>(sortBy: [SortDescriptor(\BikePointModel.name, order: .forward)])
 
         let results = try await MainActor.run {
