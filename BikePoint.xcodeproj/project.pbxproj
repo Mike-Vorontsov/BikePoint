@@ -85,43 +85,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		866CF6812AAD2B0100AECCC9 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				866CF6822AAD2B0B00AECCC9 /* Services */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		866CF6822AAD2B0B00AECCC9 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				866CF6832AAD2B2100AECCC9 /* Common */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		866CF6832AAD2B2100AECCC9 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		866CF6872AAD2C1800AECCC9 /* Support */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Support;
-			sourceTree = "<group>";
-		};
 		866CF79D2AA9F5540080D6EC = {
 			isa = PBXGroup;
 			children = (
 				86A048482C8F2F17006E359D /* BikePoint.xctestplan */,
 				8631D6142AB06C44005A6467 /* README.md */,
 				866CF7A82AA9F5540080D6EC /* BikePoint */,
-				866CF7BE2AA9F5560080D6EC /* BikePointTests */,
 				866CF7C82AA9F5560080D6EC /* BikePointUITests */,
 				866CF7A72AA9F5540080D6EC /* Products */,
 				8697268C2C8EFA3C00AAFA53 /* Frameworks */,
@@ -153,15 +122,6 @@
 				866CF7B02AA9F5560080D6EC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		866CF7BE2AA9F5560080D6EC /* BikePointTests */ = {
-			isa = PBXGroup;
-			children = (
-				866CF6872AAD2C1800AECCC9 /* Support */,
-				866CF6812AAD2B0100AECCC9 /* Tests */,
-			);
-			path = BikePointTests;
 			sourceTree = "<group>";
 		};
 		866CF7C82AA9F5560080D6EC /* BikePointUITests */ = {
