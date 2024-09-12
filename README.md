@@ -2,8 +2,8 @@
 
 ## Min spec
 
-* XCode 15.0 beta (I used latest MapKit with SwiftUI, published on WWDC'23, so beta is required)
-* iOS 17 beta or simulator 
+* XCode 15.0 
+* iOS 17 beta 
 * Mac OS Ventura 13.4 or MacOS Sonoma 14 beta
 
 ## How to use app
